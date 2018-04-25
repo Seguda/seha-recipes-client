@@ -1,7 +1,20 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-export default function Button() {
+
+
+function Button(props) {
+
     return (
-        <button>Create Recipe</button>
+        <div>
+            <button onClick={ event => props.onButtonClick(event)}>
+                Create Recipe</button>
+        </div>
     )
 }
+
+export default connect() (Button);
+
+   
+
+
