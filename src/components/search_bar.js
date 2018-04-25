@@ -1,26 +1,35 @@
 import React, {Component} from 'react';
 import RecipeList from './recipe_list';
+import {reducer} from '../reducers';
+import { connect } from 'react-redux';
 
-function searchingfFor(text){
-    return function(x){
-        return x.name.toLowerCase().includes(text.toLowerCase()) || !text;
-    }
+function searchingFor(text,recipe){
+      return recipe.name.toLowerCase().includes(text.toLowerCase());
 }
-
 class SearchBar extends Component {
     constructor(props) {
         super(props)
         this.state = { 
-            recipes:[],
+            // recipes:[],
             text:''
         }
     this.searchHandler=this.searchHandler.bind(this);
     }
     searchHandler(event){
-    this.setState({text:event.target.value})
+        //console.log(event.target.value);
+        this.setState({text:event.target.value})
     }
     render() {
-        const{text, recipes} = this.state;
+        const{text} = this.state;
+        const {recipes}=this.props;
+       
+        //console.log(searchForText({name:"cake"}));
+        console.log(recipes);
+        let filteredRecipes=recipes.filter(recipe => searchingFor(text,recipe));
+        if(!text){
+           filteredRecipes=[];
+        }
+        //console.log(filteredRecipes);
         return (
         <div className="search_bar">
             <form>
@@ -28,11 +37,17 @@ class SearchBar extends Component {
             onChange={this.searchHandler}
                         value={text} />
              </form>   
-           {this.state.recipes.filter(recipe => {
-               return <li key={recipe.name}></li>})}
+            
+                {filteredRecipes.map((recipe, index) => {
+
+               return <li key={index}>{recipe.name}</li>
+            })}
          </div>
         );
     }
 }
+const mapStateToProps = (state) => ({
+    recipes: state.recipes
+})
 
-export default SearchBar;
+export default connect(mapStateToProps)(SearchBar);

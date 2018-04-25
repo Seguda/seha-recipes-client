@@ -30,21 +30,21 @@ export const createrecipe = (recipe) => ({
 
 export const fetchRecipes = () => dispatch => {
     return fetch(`${API_BASE_URL}`)
-    //return fetch('https://seha-recipes.herokuapp.com/recipes/?results=500')
+        //return fetch('https://seha-recipes.herokuapp.com/recipes/?results=500')
         .then(res => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
             return res.json();
         })
-        .then( data => {
-          dispatch(fetchRecipeSuccess(data))
+        .then(data => {
+            dispatch(fetchRecipeSuccess(data))
         })
         .catch(err => dispatch(fetchRecipeError(err)));
 
 };
 export const createNewRecipe = (name, author, type, ethnicity, servings, ingredients, directions, image) => dispatch => {
-        return (
+    return (
         fetch(`${API_BASE_URL}/recipes`, {
             method: 'POST',
             headers: {
@@ -61,24 +61,23 @@ export const createNewRecipe = (name, author, type, ethnicity, servings, ingredi
                 image
             })
         })
-        .then(res => {
-        if (!res.ok) {
-        if (
-            res.headers.has('content-type') &&
-            res.headers.get('content-type').startsWith('application/json')
-        ) {
-            return res.json().then(err => Promise.reject(err));
-        }
-        return Promise.reject({
-            code: res.status,
-            message: res.statusText
-        });
-    }
-    return;
-        })
+            .then(res => {
+                if (!res.ok) {
+                    if (
+                        res.headers.has('content-type') &&
+                        res.headers.get('content-type').startsWith('application/json')
+                    ) {
+                        return res.json().then(err => Promise.reject(err));
+                    }
+                    return Promise.reject({
+                        code: res.status,
+                        message: res.statusText
+                    });
+                }
+                return;
+            })
             .then(res => res.json())
             .then((body) => console.log(body))
     );
 }
 
-   

@@ -7,7 +7,7 @@ class RecipeList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            recipes: [],
+         
             modal: false,
             recipeList: ''
         };
@@ -26,9 +26,9 @@ class RecipeList extends React.Component {
     render() {
         const recipes = this.props.recipes.map((val, index) => {
             return (
-              <li key={index} onClick={() => this.handleClick(val)}>
-                  Name: {val.name}
-              </li>
+                <li key={index} onClick={() => this.handleClick(val)}>
+                    Name: {val.name}
+                </li>
             )
         });
         return (

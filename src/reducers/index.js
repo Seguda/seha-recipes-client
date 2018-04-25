@@ -6,6 +6,7 @@ const initialState = {
     error: null
 };
 
+
 export const reducer = (state = initialState, action) => {
     if (action.type === actions.FETCH_RECIPE_REQUEST) {
         return Object.assign({}, state, { loading: true });
