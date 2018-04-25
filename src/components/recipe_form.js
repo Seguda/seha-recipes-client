@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { createrecipe, createNewRecipe } from '../actions/recipes';
+import { createrecipe, createNewRecipe } from '../actions';
 import { connect } from 'react-redux';
-import { fetchRecipes } from '../actions/recipes';
+import { fetchRecipes } from '../actions';
 
 
 export class CreateRecipeForm extends Component {

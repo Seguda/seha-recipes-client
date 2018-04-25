@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchRecipes } from '../actions/recipes';
+import { fetchRecipes } from '../actions';
 import RecipeListItem from './recipe_list_item';
 
 class RecipeList extends React.Component {
@@ -14,7 +14,7 @@ class RecipeList extends React.Component {
     }
 
     componentWillMount() {
-        this.props.dispatch(fetchRecipes())
+        this.props.dispatch(fetchRecipes());
     }
 
     handleClick(val) {
@@ -25,16 +25,17 @@ class RecipeList extends React.Component {
     }
     render() {
         const recipes = this.props.recipes.map((val, index) => {
-            <li key={index} onClick={() => this.handleClick(val)}>
-                Name:{val.name}
-            </li>
-        }
-        );
+            return (
+              <li key={index} onClick={() => this.handleClick(val)}>
+                  Name: {val.name}
+              </li>
+            )
+        });
         return (
             <div>
                 <div className="recipe_list">
                     <h3>Recipe List</h3>
-                   
+                    <p>{recipes}</p>
                 </div>
                 <div className="recipe_list" style={{ 'display': (this.state.modal) ? 'block' : 'none' }}>
                     <RecipeListItem recipe={this.state.recipeList} handle={(e) => this.handleClick(e)} />

@@ -1,7 +1,5 @@
 import { API_BASE_URL } from '../config';
 
-
-
 export const FETCH_RECIPE_REQUEST = 'FETCH_RECIPE_REQUEST';
 export const fetchRecipeRequest = () => ({
     type: FETCH_RECIPE_REQUEST
@@ -31,8 +29,7 @@ export const createrecipe = (recipe) => ({
 // })
 
 export const fetchRecipes = () => dispatch => {
-    dispatch(fetchRecipeRequest());
-    return fetch(API_BASE_URL)
+    return fetch(`${API_BASE_URL}`)
     //return fetch('https://seha-recipes.herokuapp.com/recipes/?results=500')
         .then(res => {
             if (!res.ok) {
@@ -40,7 +37,9 @@ export const fetchRecipes = () => dispatch => {
             }
             return res.json();
         })
-        .then(data => dispatch(fetchRecipeSuccess(data)))
+        .then( data => {
+          dispatch(fetchRecipeSuccess(data))
+        })
         .catch(err => dispatch(fetchRecipeError(err)));
 
 };

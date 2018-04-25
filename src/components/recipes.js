@@ -5,13 +5,15 @@ import Button from './create_button';
 import RecipeList from './recipe_list';
 import CreateRecipeForm from './recipe_form'
 import Header from './header';
-import { fetchRecipes } from '../actions/recipes';
+import { fetchRecipes } from '../actions';
 
 class Recipes extends Component {
     constructor(props) {
         super(props);
         this.onButtonClick = this.onButtonClick.bind(this);
-        this.state = {modal:false};
+        this.state = {
+          modal: false
+        };
     }
 
     onButtonClick(event) {
@@ -32,12 +34,10 @@ class Recipes extends Component {
         return (
             <div>
                 <Header />
-            
-            {CreateRecipe}
-            <RecipeList recipes={this.state.recipes}/>
-            <SearchBar />
-            <Button onButtonClick={this.onButtonClick} />
-           
+                {CreateRecipe}
+                <RecipeList recipes={this.props.recipes}/>
+                <SearchBar />
+                <Button onButtonClick={this.onButtonClick} />
             </div>
         );
     }

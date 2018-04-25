@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { createrecipe } from '../actions/recipes';
+import { createrecipe } from '../actions';
 
 export class CreateRecipe extends React.Component {
     onChange(value) {
