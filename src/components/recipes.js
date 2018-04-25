@@ -8,25 +8,21 @@ import Header from './header';
 import { fetchRecipes } from '../actions/recipes';
 
 class Recipes extends Component {
-
-    // componentDidMount() {
-    //     this.props.dispatch(fetchRecipes());
-    // }
     constructor(props) {
         super(props);
         this.onButtonClick = this.onButtonClick.bind(this);
-        this.state = {};
+        this.state = {modal:false};
     }
 
     onButtonClick(event) {
        console.log('count');
-        this.setState();
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
     }
 
     render() {
-        var CreateRecipe = this.state.creatingRecipe ? <CreateRecipe /> : '';
-
-       // var Recipe = (this.props.recipes.length > 0) ? 
+        var CreateRecipe = this.state.modal ? <CreateRecipe /> : '';
             <div>
                 <ul>
                     {this.props.recipes}
@@ -46,12 +42,6 @@ class Recipes extends Component {
         );
     }
 }
-        // console.log(this.props);
-        // const recipes = this.props.recipes.map((recipe, index) => {
-        //     return(
-        //         <li key={index}>{recipe.name}</li>)
-        // }) 
-
 const mapStateToProps = state => ({
     recipes: state.recipes
 });

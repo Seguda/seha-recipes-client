@@ -36,7 +36,7 @@ class RecipeList extends React.Component {
                     <h3>Recipe List</h3>
                    
                 </div>
-                <div className="recipe_list_item" style={{ 'display': (this.state.modal) ? 'block' : 'none' }}>
+                <div className="recipe_list" style={{ 'display': (this.state.modal) ? 'block' : 'none' }}>
                     <RecipeListItem recipe={this.state.recipeList} handle={(e) => this.handleClick(e)} />
                 </div>
             </div>

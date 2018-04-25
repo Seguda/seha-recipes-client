@@ -25,10 +25,10 @@ export const createrecipe = (recipe) => ({
     recipe
 })
 
-export const IS_CLICKED = 'IS_CLICKED'
-export const isClicked=()=>({
-    type:IS_CLICKED,
-})
+// export const IS_CLICKED = 'IS_CLICKED'
+// export const isClicked=()=>({
+//     type:IS_CLICKED,
+// })
 
 export const fetchRecipes = () => dispatch => {
     dispatch(fetchRecipeRequest());
