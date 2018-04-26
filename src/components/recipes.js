@@ -16,12 +16,12 @@ class Recipes extends Component {
         };
     }
 
-    // onButtonClick(event) {
-    //    console.log('count');
-    //     this.setState(prevState => ({
-    //         modal: !prevState.modal
-    //     }));
-    // }
+    onButtonClick(event) {
+       console.log('count');
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
+    }
 
     render() {
         var createRecipeForm = !this.props.createFormHidden ? <CreateRecipeForm /> : '';
