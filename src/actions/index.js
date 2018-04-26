@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { SubmissionError } from 'redux-form';
 
 export const FETCH_RECIPE_REQUEST = 'FETCH_RECIPE_REQUEST';
 export const fetchRecipeRequest = () => ({
@@ -23,14 +24,14 @@ export const createrecipe = (recipe) => ({
     recipe
 })
 
-// export const IS_CLICKED = 'IS_CLICKED'
-// export const isClicked=()=>({
-//     type:IS_CLICKED,
-// })
+export const CREATE_FORM = 'CREATE_FORM'
+export const createform= createFormHidden =>({
+    type: CREATE_FORM,
+    createFormHidden
+})
 
 export const fetchRecipes = () => dispatch => {
-    return fetch(`${API_BASE_URL}`)
-        //return fetch('https://seha-recipes.herokuapp.com/recipes/?results=500')
+    return fetch(`${API_BASE_URL}/recipes`)
         .then(res => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
@@ -76,8 +77,23 @@ export const createNewRecipe = (name, author, type, ethnicity, servings, ingredi
                 }
                 return;
             })
-            .then(res => res.json())
-            .then((body) => console.log(body))
-    );
-}
-
+            // .then(res => res.json())
+            // .then((body) => console.log(body))
+            .then(() => this.props.dispatch(fetchRecipes()))
+            .then(() => this.props.reset())
+            .catch(err => {
+                const { reason, message, location } = err;
+                if (reason === 'Validation Error') {
+                    return Promise.reject(
+                        new SubmissionError({
+                            [location]: message
+                        })
+                    );
+                }
+                return Promise.reject(
+                    new SubmissionError({
+                        _error: 'Error submitting recipe'
+                    })
+                ); 
+        })
+    )}

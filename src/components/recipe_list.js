@@ -8,8 +8,8 @@ class RecipeList extends React.Component {
         super(props);
         this.state = {
          
-            modal: false,
-            recipeList: ''
+            showRecipe: false,
+            recipe: ''
         };
     }
 
@@ -17,17 +17,17 @@ class RecipeList extends React.Component {
         this.props.dispatch(fetchRecipes());
     }
 
-    handleClick(val) {
+    handleClick(recipe) {
         this.setState({
-            modal: (this.state.modal) ? false : true,
-            recipeList: val
+            showRecipe: (this.state.showRecipe) ? false : true,
+            recipe 
         })
     }
     render() {
-        const recipes = this.props.recipes.map((val, index) => {
+        const recipes = this.props.recipes.map((recipe, index) => {
             return (
-                <li key={index} onClick={() => this.handleClick(val)}>
-                    Name: {val.name}
+                <li key={index} onClick={() => this.handleClick(recipe)}>
+                   {recipe.name}
                 </li>
             )
         });
@@ -37,10 +37,10 @@ class RecipeList extends React.Component {
                     <h3>Recipe List</h3>
                     <p>{recipes}</p>
                 </div>
-                <div className="recipe_list" style={{ 'display': (this.state.modal) ? 'block' : 'none' }}>
-                    <RecipeListItem recipe={this.state.recipeList} handle={(e) => this.handleClick(e)} />
+                <div className="recipe_list" style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
+                    <RecipeListItem recipe={this.state.recipe} handle={(e) => this.handleClick(e)} />
                 </div>
-            </div>
+            </div> 
         );
     }
 }

@@ -3,7 +3,8 @@ import * as actions from '../actions';
 const initialState = {
     recipes: [],
     loading: false,
-    error: null
+    error: null,
+    createFormHidden: true
 };
 
 
@@ -21,6 +22,10 @@ export const reducer = (state = initialState, action) => {
             loading: false,
             error: action.error
         });
-    }
+    }else if(action.type === actions.CREATE_FORM){
+        return Object.assign({}, state, {
+            createFormHidden:action.createFormHidden
+    });
+}
     return state;
 }

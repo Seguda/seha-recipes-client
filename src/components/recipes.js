@@ -16,15 +16,15 @@ class Recipes extends Component {
         };
     }
 
-    onButtonClick(event) {
-       console.log('count');
-        this.setState(prevState => ({
-            modal: !prevState.modal
-        }));
-    }
+    // onButtonClick(event) {
+    //    console.log('count');
+    //     this.setState(prevState => ({
+    //         modal: !prevState.modal
+    //     }));
+    // }
 
     render() {
-        var CreateRecipe = this.state.modal ? <CreateRecipe /> : '';
+        var createRecipeForm = !this.props.createFormHidden ? <CreateRecipeForm /> : '';
             <div>
                 <ul>
                     {this.props.recipes}
@@ -34,7 +34,7 @@ class Recipes extends Component {
         return (
             <div>
                 <Header />
-                {CreateRecipe}
+                {createRecipeForm}
                 <RecipeList recipes={this.props.recipes}/>
                 <SearchBar />
                 <Button onButtonClick={this.onButtonClick} />
@@ -43,7 +43,7 @@ class Recipes extends Component {
     }
 }
 const mapStateToProps = state => ({
-    recipes: state.recipes
+    recipes: state.recipes, createFormHidden:state.createFormHidden
 });
 
 export default connect(mapStateToProps)(Recipes);

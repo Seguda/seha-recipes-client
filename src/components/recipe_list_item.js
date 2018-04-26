@@ -8,7 +8,7 @@ export default class RecipeListItem extends React.Component {
             <div>
                 <h1>Name: {this.props.recipe.name}</h1>
                 <h2>Ahuthor: {this.props.recipe.author}</h2>
-                <h2>Type: {this.props.recipe.author}</h2>
+                <h2>Type: {this.props.recipe.type}</h2>
                 <h2>Ethnicity: {this.props.recipe.ethnicity}</h2>
                 <h2>Servings: {this.props.recipe.servings}</h2>
                 <h2>Ingredients: {this.props.recipe.ingredients}</h2>
