@@ -5,45 +5,32 @@ import Button from './create_button';
 import RecipeList from './recipe_list';
 import CreateRecipeForm from './recipe_form'
 import Header from './header';
-import { fetchRecipes } from '../actions';
+
 
 class Recipes extends Component {
-    constructor(props) {
-        super(props);
-        this.onButtonClick = this.onButtonClick.bind(this);
-        this.state = {
-          modal: false
-        };
-    }
 
-    onButtonClick(event) {
-       console.log('count');
-        this.setState(prevState => ({
-            modal: !prevState.modal
-        }));
-    }
 
-    render() {
-        var createRecipeForm = !this.props.createFormHidden ? <CreateRecipeForm /> : '';
-            <div>
-                <ul>
-                    {this.props.recipes}
-                </ul>
-            </div>
-    
+    render(){
         return (
             <div>
                 <Header />
-                {createRecipeForm}
+                <CreateRecipeForm createFormHidden={this.props.createFormHidden} />
                 <RecipeList recipes={this.props.recipes}/>
                 <SearchBar />
-                <Button onButtonClick={this.onButtonClick} />
+                <Button value={true} text={'Create Form'} ></Button>
             </div>
         );
     }
 }
-const mapStateToProps = state => ({
-    recipes: state.recipes, createFormHidden:state.createFormHidden
-});
+
+
+const mapStateToProps = function (state) {
+    console.log("State inside recipes.js ");
+    console.log(state);
+return {
+    recipes: state.recipeReducer.recipes,
+    createFormHidden: state.recipeReducer.createFormHidden
+};
+}
 
 export default connect(mapStateToProps)(Recipes);

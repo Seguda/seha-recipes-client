@@ -13,7 +13,7 @@ export default class RecipeListItem extends React.Component {
                 <h2>Servings: {this.props.recipe.servings}</h2>
                 <h2>Ingredients: {this.props.recipe.ingredients}</h2>
                 <h2>Directions: {this.props.recipe.directions}</h2>
-                <img src={this.props.recipe.image} alt="some image" />
+                {/* <img src={this.props.recipe.image} alt="some image" /> */}
                 <p>
                     <button onClick={() => this.props.handle('')}>Close</button>
                 </p>

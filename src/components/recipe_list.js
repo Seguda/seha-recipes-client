@@ -1,20 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchRecipes } from '../actions';
 import RecipeListItem from './recipe_list_item';
+import { fetchRecipes } from '../reducers';
 
 class RecipeList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-         
             showRecipe: false,
             recipe: ''
         };
     }
 
     componentWillMount() {
-        this.props.dispatch(fetchRecipes());
+        this.props.getList();
     }
 
     handleClick(recipe) {
@@ -46,7 +45,11 @@ class RecipeList extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    recipes: state.recipes
+    recipes: state.recipeReducer.recipes
 })
 
-export default connect(mapStateToProps)(RecipeList);
+const mapDispatchToProps = (dispatch) => ({
+    getList: () => dispatch(fetchRecipes())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeList);

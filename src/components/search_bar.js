@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import RecipeList from './recipe_list';
-import {reducer} from '../reducers';
 import { connect } from 'react-redux';
 import RecipeListItem from './recipe_list_item';
 
@@ -60,7 +58,7 @@ class SearchBar extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    recipes: state.recipes
+    recipes: state.recipeReducer.recipes
 })
 
 export default connect(mapStateToProps)(SearchBar);

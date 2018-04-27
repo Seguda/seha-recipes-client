@@ -1,18 +1,25 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { createNewRecipe, createform } from '../actions';
+import { createform } from '../actions';
 
 function Button(props) {
 
     return (
         <div>
-            <button onClick={() => props.dispatch(createform(false))}>
-                Create Recipe</button>
+            <button value={props.value} onClick={props.onClick}> {props.text} </button>
         </div>
     )
 }
 
-export default connect() (Button);
+const mapStateToProps = (state, ownProps) => ({
+    createFormHidden: state.createFormHidden === ownProps.value
+})
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    onClick: () => dispatch(createform(ownProps.value))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Button);
 
    
 
