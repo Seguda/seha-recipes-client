@@ -1,6 +1,5 @@
 import * as actions from '../actions';
 import { API_BASE_URL } from '../config';
-import { SubmissionError } from 'redux-form';
 
 export const RECIPE_SUBMIT = 'RECIPE_SUBMIT';
 export const submitNewRecipe = () => ({
@@ -56,9 +55,9 @@ export const fetchRecipes = () => dispatch => {
 
 };
 
-export const createNewRecipe = (name, author, type, ethnicity, servings, ingredients, directions, image) => dispatch => {
-    return 
-        fetch(`${API_BASE_URL}/recipes`, {
+export const createNewRecipe = ({name, author, type, ethnicity, servings, ingredients, directions, image}) => dispatch => {
+    console.log(name, author, type, ethnicity, servings, ingredients, directions, image);
+    return fetch(`${API_BASE_URL}/recipes`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -78,7 +77,9 @@ export const createNewRecipe = (name, author, type, ethnicity, servings, ingredi
                 if (!res.ok) {
                     if (
                         res.headers.has('content-type') &&
-                        res.headers.get('content-type').startsWith('application/json')
+                        res.headers
+                        .get('content-type')
+                        .startsWith('application/json')
                     ) {
                         return res.json().then(err => Promise.reject(err));
                     }
@@ -87,26 +88,12 @@ export const createNewRecipe = (name, author, type, ethnicity, servings, ingredi
                         message: res.statusText
                     });
                 }
-                return;
+                return res;
             })
-            // .then(res => res.json())
-            // .then((body) => console.log(body))
-            .then(() => this.props.dispatch(fetchRecipes()))
-            .then(() => this.props.reset())
+            .then(res => res.json())
+            .then((body) => console.log(body))
+            .then(() => dispatch(fetchRecipes()))
             .catch(err => {
-                const { reason, message, location } = err;
-                if (reason === 'Validation Error') {
-                    return Promise.reject(
-                        new SubmissionError({
-                            [location]: message
-                        })
-                    );
-                }
-                return Promise.reject(
-                    new SubmissionError({
-                        _error: 'Error submitting recipe'
-                    })
-                );
+                console.log(err);
             })
-    
 }

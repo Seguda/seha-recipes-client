@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import {createNewRecipe}  from '../actions';
-import Input from './input';
+import { createNewRecipe }  from '../actions';
 import Button from './create_button';
 
 class CreateRecipeForm extends Component {
-    // componentDidMount(){
-    //     console.log('did mount working');
-    //     this.props.dispatch(createNewRecipe());
-    // }
-    // onSubmit(values) {
-    //     console.log(values);
-    //     this.props.dispatch(createNewRecipe(values));
-    //     //this.props.dispatch(createNewRecipe());
-    // }
+   
+    onSubmit(values){
+        console.log(values);
+        this.props.dispatch(createNewRecipe(values));
+    }  
     render() {
-        console.log(this.props);
         const createRecipeForm = (
         <div>
-        <form onSubmit={this.props.handleSubmit}> 
-              
+                <form onSubmit = {this.props.handleSubmit(values => this.onSubmit(values)) 
+                     }> 
             <h2>Create New a Recipe</h2>
             <label htmlFor="add name">Recipe Name</label>
             <Field

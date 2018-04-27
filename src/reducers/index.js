@@ -24,14 +24,12 @@ const recipeReducer = (state = initialState, action) => {
             error: action.error
         });
     } else if(action.type === actions.CREATE_FORM) {
-        console.log("in reducer");
-        console.log(state);
-        console.log(action);
-        var x = Object.assign({}, state, {
+        //console.log("in reducer");
+        //console.log(state);
+        //console.log(action);
+       return Object.assign({}, state, {
             createFormHidden: action.createFormHidden
         });
-        console.log(x);
-        return x;
     } else if (action.type === actions.RECIPE_SUBMIT) {
 
     }

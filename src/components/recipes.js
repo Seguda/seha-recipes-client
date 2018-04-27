@@ -6,18 +6,14 @@ import RecipeList from './recipe_list';
 import CreateRecipeForm from './recipe_form'
 import Header from './header';
 
-
 class Recipes extends Component {
 
-    submit = values => {
-        console.log(values)
-    }
 
     render(){
         return (
             <div>
                 <Header />
-                <CreateRecipeForm createFormHidden={this.props.createFormHidden} onSubmit={this.submit} />
+                <CreateRecipeForm createFormHidden={this.props.createFormHidden} />
                 <RecipeList recipes={this.props.recipes}/>
                 <SearchBar />
                 <Button value={true} text={'Create Form'} ></Button>
