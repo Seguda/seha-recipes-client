@@ -9,12 +9,15 @@ import Header from './header';
 
 class Recipes extends Component {
 
+    submit = values => {
+        console.log(values)
+    }
 
     render(){
         return (
             <div>
                 <Header />
-                <CreateRecipeForm createFormHidden={this.props.createFormHidden} />
+                <CreateRecipeForm createFormHidden={this.props.createFormHidden} onSubmit={this.submit} />
                 <RecipeList recipes={this.props.recipes}/>
                 <SearchBar />
                 <Button value={true} text={'Create Form'} ></Button>
@@ -25,8 +28,8 @@ class Recipes extends Component {
 
 
 const mapStateToProps = function (state) {
-    console.log("State inside recipes.js ");
-    console.log(state);
+    //console.log("State inside recipes.js ");
+    //console.log(state);
 return {
     recipes: state.recipeReducer.recipes,
     createFormHidden: state.recipeReducer.createFormHidden

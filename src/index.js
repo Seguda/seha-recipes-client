@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import recipeReducer, { fetchRecipes } from './reducers';
+import recipeReducer from './reducers';
+import { fetchRecipes } from './actions';
 import thunk from 'redux-thunk';
-
 import Recipes from './components/recipes';
 import './index.css';
 import { composeWithDevTools } from 'redux-devtools-extension';	
@@ -15,7 +15,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(
   combineReducers({
-    formReducer,
+    form: formReducer,
     recipeReducer
   }), 
   composeWithDevTools(applyMiddleware(thunk)

@@ -1,106 +1,105 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { submitNewRecipe } from '../actions';
+import {createNewRecipe}  from '../actions';
 import Input from './input';
 import Button from './create_button';
-import { required } from '../validators';
-
-
 
 class CreateRecipeForm extends Component {
-  
-        // handleSubmit(values, event){
-        // event.preventDefault();
-        
-        // this.props.dispatch(createNewRecipe(this.props.));
+    // componentDidMount(){
+    //     console.log('did mount working');
+    //     this.props.dispatch(createNewRecipe());
     // }
-
+    // onSubmit(values) {
+    //     console.log(values);
+    //     this.props.dispatch(createNewRecipe(values));
+    //     //this.props.dispatch(createNewRecipe());
+    // }
     render() {
-        const { fields: { name, author, type, ethnicity, servings, ingredients, directions }, onSubmit} = this.props;
+        console.log(this.props);
         const createRecipeForm = (
         <div>
-        <form onSubmit={this.props.onSubmit}>
-            
+        <form onSubmit={this.props.handleSubmit}> 
+              
             <h2>Create New a Recipe</h2>
             <label htmlFor="add name">Recipe Name</label>
             <Field
-                component={Input}
+                component="input"
                 type="text"
                 name="name"
                 placeholder="Eclair"
-                validate={[required]}
-                {...name}
+                // validate={[required]}
             />
             <br />
             <label htmlFor="add author">Author</label>
             <Field
-                component={Input}
+                component="input"
                 type="text"
                 name="author"
+                id="author"
                 placeholder="Sam"
-                validate={[required]}
-                {...author}
+                // validate={[required]}
             />
             <br />
             <label htmlFor="add type">Type</label>
             <Field
-                component={Input}
+                component="input"
                 type="text"
                 name="type"
+                id="type"
                 placeholder="Dessert"
-                validate={[required]}
-                {...type}
+                // validate={[required]}
             />
             <br />
             <label htmlFor="add ethnicity">Ethnicity</label>
             <Field
-                component={Input}
+                component="input"
                 type="text"
-                name="ethnicity"
+                name="ethnicity" 
+                id="ethnicity"
                 placeholder="French"
-                validate={[required]}
-                {...ethnicity}        
+                // validate={[required]}
             />
             <br />
             <label htmlFor="add num of servings">Servings</label>
             <Field
-                component={Input}
+                component="input"
                 type="number"
                 name="servings"
+                id="servings"
                 placeholder="4"
-                validate={[required]}
-                {...servings}
+                // validate={[required]}
             />
             <br />
             <label htmlFor="add ingredients">Ingredients:</label>
             <Field
-                component={Input}
+                component="input"
                 type="text"
                 element="textarea"
                 name="ingredients"
+                id="ingredients"
                 placeholder="Chocolate, Flour, Milk"
-                validate={[required]}
-                {...ingredients}
+                // validate={[required]}
             />
             <br />
             <label htmlFor="add directions">Directions</label>
             <Field
-                component={Input}
+                component="input"
                 type="text"
                 element="textarea"
                 name="directions"
+                id="directions"
                 placeholder="Pay someone to bake it for you"
-                validate={[required]}
-                {...directions}
+                // validate={[required]}
             />
             <br />
             <label htmlFor="add image">Recipe Image</label>
             <Field
-                component={Input}
+                component="input"
                 type="image"
                 name="image"
+                id="image"
                 placeholder="Image"
-                validate={[required]}
+                // validate={[required]}
             />
             <br />
              <button type="submit"
@@ -119,17 +118,11 @@ class CreateRecipeForm extends Component {
         )
     }
 }
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    onSubmit: () => dispatch(submitNewRecipe())
-})
-
 //connect: 1st argument is mapStateToProps,2nd is mapDispatchToProps
 //reduxForm: 1st is form config, 2nd is mapsStateToProps, 3rd is mapDispatchToProps
 
 export default reduxForm({
-    form: 'recipe',
-    fields:['name','author','type','ethnicity','servings','ingredients','directions','image']
-}, null, mapDispatchToProps)(CreateRecipeForm);
+    form: 'recipes'
+})(CreateRecipeForm);
 
 
