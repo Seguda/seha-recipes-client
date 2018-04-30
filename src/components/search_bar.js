@@ -9,7 +9,7 @@ function searchingFor(text,recipe){
 class SearchBar extends Component {
     constructor(props) {
         super(props)
-        this.state = { 
+        this.state = {
             recipe:'',
             text:'',
             showRecipe:false,
@@ -32,7 +32,7 @@ class SearchBar extends Component {
     render() {
         const{text} = this.state;
         const {recipes}=this.props;
-       
+
        // console.log(recipes);
         let filteredRecipes=recipes.filter(recipe => searchingFor(text,recipe));
         if(!text){
@@ -43,19 +43,18 @@ class SearchBar extends Component {
         <div className="search_bar">
                 <img src="http://localhost:3000/images/backgroundpic.jpg" alt="background_img" className="background_img" />
             <div className="search_box">
-                <input type="search" id="search" placeholder="Recipe Search"
+                <input type="search" id="search" className="search_input" placeholder="Recipe Search"
                 onChange={this.searchHandler}
                 value={text} />
-            </div>
-            <div className="search_results">
-                {filteredRecipes.map((recipe, index) => {
-                    return <li key={index} onClick={() => this.handleClick(recipe)}>{recipe.name}</li>
-                })}
-            </div>
+                <div className="search_results">
+                    {filteredRecipes.map((recipe, index) => {
+                        return <li key={index} onClick={() => this.handleClick(recipe)}>{recipe.name}</li>
+                    })}
+                </div>
                 { <div className="recipe_list" style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
                     <RecipeListItem recipe={this.state.recipe} handle={(e) => this.handleClick(e)} />
                 </div>}
-           
+            </div>
          </div>
         );
     }
