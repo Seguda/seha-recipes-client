@@ -16,7 +16,12 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    onClick: () => dispatch(createform(ownProps.value))
+    onClick: () => { 
+        dispatch(createform(ownProps.value))
+        if(ownProps.onClick){
+            ownProps.onClick()
+        }
+}
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Button);

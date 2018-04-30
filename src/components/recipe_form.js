@@ -1,31 +1,13 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, reset } from 'redux-form';
 import { createNewRecipe }  from '../actions';
 import Button from './create_button';
 
-const initialState = {
-  name: '',
-  author: '',
-  type: '',
-  ethnicity: '',
-  servings: null,
-  ingredients: '',
-  directions: '',
-  image: ''
-}
-
 class CreateRecipeForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = initialState;
-  }
-
-    onSubmit(values){
-        //console.log(values);
-        //this.props.dispatch(createNewRecipe(values));
-        // this.setState((prevState, props) => ({
-        //   ...initialState
-        // }));
+ 
+    onSubmit(values) {
+        this.props.dispatch(createNewRecipe(values));
+       
     }
     render() {
         const createRecipeForm = (
@@ -118,7 +100,7 @@ class CreateRecipeForm extends Component {
                 className="add_recipe">Add Recipe</button>
 
         </form>
-            <Button value={false} text={'Hide Form'}></Button>
+                <Button value={false} text={'Hide Form'} onClick={() => this.props.dispatch(reset('recipes'))} ></Button>
 
         </div>
         )

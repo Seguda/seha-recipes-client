@@ -13,7 +13,6 @@ class SearchBar extends Component {
             recipe:'',
             text:'',
             showRecipe:false,
-
         }
     this.searchHandler=this.searchHandler.bind(this);
     }
