@@ -13,9 +13,9 @@ class Recipes extends Component {
         return (
             <div>
                 <Header />
+                <SearchBar />
                 <CreateRecipeForm createFormHidden={this.props.createFormHidden} />
                 <RecipeList recipes={this.props.recipes}/>
-                <SearchBar />
                 <Button value={true} text={'Create Form'} ></Button>
             </div>
         );

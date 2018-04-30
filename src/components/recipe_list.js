@@ -23,21 +23,25 @@ class RecipeList extends React.Component {
         })
     }
     render() {
+      
         const recipes = this.props.recipes.map((recipe, index) => {
             return (
                 <li key={index} onClick={() => this.handleClick(recipe)}>
                    {recipe.name}
                 </li>
+            
             )
         });
         return (
             <div>
-                <div className="recipe_list">
+                <div className="recipeListHeader">
                     <h3>Recipe List</h3>
                     <p>{recipes}</p>
                 </div>
-                <div className="recipe_list" style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
+                <div className="recipe_list"> 
+                <ul style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
                     <RecipeListItem recipe={this.state.recipe} handle={(e) => this.handleClick(e)} />
+                </ul>
                 </div>
             </div> 
         );

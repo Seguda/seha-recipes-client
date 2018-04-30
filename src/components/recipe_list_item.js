@@ -1,11 +1,12 @@
 import React from "react";
+import './recipe_list_item.css';
 
 export default class RecipeListItem extends React.Component {
 
 
     render() {
         return (
-            <div>
+            <div className="recipeListItem">
                 <h1>Name: {this.props.recipe.name}</h1>
                 <h2>Ahuthor: {this.props.recipe.author}</h2>
                 <h2>Type: {this.props.recipe.type}</h2>

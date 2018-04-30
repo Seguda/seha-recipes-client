@@ -21,7 +21,7 @@ class CreateRecipeForm extends Component {
                 type="text"
                 name="name"
                 placeholder="Eclair"
-                // validate={[required]}
+            
             />
             <br />
             <label htmlFor="add author">Author</label>
@@ -31,7 +31,7 @@ class CreateRecipeForm extends Component {
                 name="author"
                 id="author"
                 placeholder="Sam"
-                // validate={[required]}
+                
             />
             <br />
             <label htmlFor="add type">Type</label>

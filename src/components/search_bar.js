@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import RecipeListItem from './recipe_list_item';
+import './search_bar.css'
 
 function searchingFor(text,recipe){
       return recipe.name.toLowerCase().includes(text.toLowerCase());
@@ -40,18 +41,20 @@ class SearchBar extends Component {
         //console.log(filteredRecipes);
         return (
         <div className="search_bar">
-            <form>
-           <input type="text"
-            onChange={this.searchHandler}
-                        value={text} />
-             </form>   
-            
+                <img src="http://localhost:3000/images/backgroundpic.jpg" alt="background_img" className="background_img" />
+            <div className="search_box">
+                <input type="search" id="search" placeholder="Recipe Search"
+                onChange={this.searchHandler}
+                value={text} />
+            </div>
+            <div className="search_results">
                 {filteredRecipes.map((recipe, index) => {
                     return <li key={index} onClick={() => this.handleClick(recipe)}>{recipe.name}</li>
                 })}
+            </div>
                 { <div className="recipe_list" style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
                     <RecipeListItem recipe={this.state.recipe} handle={(e) => this.handleClick(e)} />
-                        </div>}
+                </div>}
            
          </div>
         );
