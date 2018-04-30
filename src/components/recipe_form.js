@@ -3,17 +3,35 @@ import { Field, reduxForm } from 'redux-form';
 import { createNewRecipe }  from '../actions';
 import Button from './create_button';
 
+const initialState = {
+  name: '',
+  author: '',
+  type: '',
+  ethnicity: '',
+  servings: null,
+  ingredients: '',
+  directions: '',
+  image: ''
+}
+
 class CreateRecipeForm extends Component {
-   
+  constructor(props) {
+    super(props);
+    this.state = initialState;
+  }
+
     onSubmit(values){
-        console.log(values);
-        this.props.dispatch(createNewRecipe(values));
-    }  
+        //console.log(values);
+        //this.props.dispatch(createNewRecipe(values));
+        // this.setState((prevState, props) => ({
+        //   ...initialState
+        // }));
+    }
     render() {
         const createRecipeForm = (
         <div>
-                <form onSubmit = {this.props.handleSubmit(values => this.onSubmit(values)) 
-                     }> 
+                <form onSubmit = {this.props.handleSubmit(values => this.onSubmit(values))
+                     }>
             <h2>Create New a Recipe</h2>
             <label htmlFor="add name">Recipe Name</label>
             <Field
@@ -21,7 +39,7 @@ class CreateRecipeForm extends Component {
                 type="text"
                 name="name"
                 placeholder="Eclair"
-            
+                value={this.props.name}
             />
             <br />
             <label htmlFor="add author">Author</label>
@@ -31,7 +49,7 @@ class CreateRecipeForm extends Component {
                 name="author"
                 id="author"
                 placeholder="Sam"
-                
+
             />
             <br />
             <label htmlFor="add type">Type</label>
@@ -48,7 +66,7 @@ class CreateRecipeForm extends Component {
             <Field
                 component="input"
                 type="text"
-                name="ethnicity" 
+                name="ethnicity"
                 id="ethnicity"
                 placeholder="French"
                 // validate={[required]}
@@ -97,14 +115,14 @@ class CreateRecipeForm extends Component {
             />
             <br />
              <button type="submit"
-                className="add_recipe">Add Recipe</button>  
+                className="add_recipe">Add Recipe</button>
 
         </form>
-            <Button value={false} text={'Hide Form'}></Button>       
+            <Button value={false} text={'Hide Form'}></Button>
 
         </div>
         )
-    
+
         return (
             <div>
                 {this.props.createFormHidden ? createRecipeForm : ''}
@@ -118,5 +136,3 @@ class CreateRecipeForm extends Component {
 export default reduxForm({
     form: 'recipes'
 })(CreateRecipeForm);
-
-
