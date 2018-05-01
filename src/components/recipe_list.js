@@ -26,9 +26,11 @@ class RecipeList extends React.Component {
       
         const recipes = this.props.recipes.map((recipe, index) => {
             return (
+                <ul>
                 <li key={index} onClick={() => this.handleClick(recipe)}>
                    {recipe.name}
                 </li>
+                </ul>
             
             )
         });
@@ -39,7 +41,9 @@ class RecipeList extends React.Component {
                     <p>{recipes}</p>
                 <div className="recipe_list"> 
                 <ul style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
+               
                     <RecipeListItem recipe={this.state.recipe} handle={(e) => this.handleClick(e)} />
+               
                 </ul>
                 </div>
             </div> 

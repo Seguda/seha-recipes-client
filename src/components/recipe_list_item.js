@@ -6,6 +6,8 @@ export default class RecipeListItem extends React.Component {
 
     render() {
         return (
+            <ul>
+            <div className="recipe_list">
             <div className="recipeListItem" id="list"> 
                 <div className="content">
                 <h1> {this.props.recipe.name}</h1>
@@ -18,11 +20,14 @@ export default class RecipeListItem extends React.Component {
                 <h2>Directions: {this.props.recipe.directions}</h2>
                 {/* <img src={this.props.recipe.image} alt="some image" /> */}
                 </div>
+              
                 <p>
                     <button onClick={() => this.props.handle('')}>Close</button>
                 </p>
                 </div>
              </div>
+             </div>
+            </ul>
            
         )
     }

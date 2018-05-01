@@ -42,6 +42,7 @@ class SearchBar extends Component {
         <div className="search_bar">
                 <img src="http://localhost:3000/images/backgroundpic.jpg" alt="background_img" className="background_img" />
             <div className="search_box">
+                <label htmlFor="search"></label>
                 <input type="search" id="search" className="search_input" placeholder="Recipe Search"
                 onChange={this.searchHandler}
                 value={text} />
