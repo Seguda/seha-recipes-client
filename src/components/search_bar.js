@@ -53,8 +53,8 @@ class SearchBar extends Component {
                 { <div className="recipe_list" style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
                     <RecipeListItem recipe={this.state.recipe} handle={(e) => this.handleClick(e)} />
                 </div>}
+                </div>
             </div>
-         </div>
         );
     }
 }

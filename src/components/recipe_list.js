@@ -33,11 +33,10 @@ class RecipeList extends React.Component {
             )
         });
         return (
-            <div>
-                <div className="recipeListHeader">
+            
+                <div className="recipeList">
                     <h3>Recipe List</h3>
                     <p>{recipes}</p>
-                </div>
                 <div className="recipe_list"> 
                 <ul style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
                     <RecipeListItem recipe={this.state.recipe} handle={(e) => this.handleClick(e)} />

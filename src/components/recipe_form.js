@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import { Field, reduxForm, reset } from 'redux-form';
+import { Field, reduxForm, reset} from 'redux-form';
 import { createNewRecipe }  from '../actions';
 import Button from './create_button';
+import './recipe_form.css'
 
 class CreateRecipeForm extends Component {
  
     onSubmit(values) {
         this.props.dispatch(createNewRecipe(values));
-       
+        
     }
     render() {
         const createRecipeForm = (
-        <div>
-                <form onSubmit = {this.props.handleSubmit(values => this.onSubmit(values))
+            <div className="form_content">
+            <form onSubmit = {this.props.handleSubmit(values => this.onSubmit(values))
                      }>
+          
             <h2>Create New a Recipe</h2>
             <label htmlFor="add name">Recipe Name</label>
             <Field
@@ -21,7 +23,6 @@ class CreateRecipeForm extends Component {
                 type="text"
                 name="name"
                 placeholder="Eclair"
-                value={this.props.name}
             />
             <br />
             <label htmlFor="add author">Author</label>
@@ -87,28 +88,31 @@ class CreateRecipeForm extends Component {
             />
             <br />
             <label htmlFor="add image">Recipe Image</label>
-            <Field
+           <input
                 component="input"
-                type="image"
+                type="file"
                 name="image"
                 id="image"
                 placeholder="Image"
-                // validate={[required]}
             />
             <br />
-             <button type="submit"
-                className="add_recipe">Add Recipe</button>
-
-        </form>
-                <Button value={false} text={'Hide Form'} onClick={() => this.props.dispatch(reset('recipes'))} ></Button>
-
+                    
+            <button type="submit"
+            className="add_recipe">Save</button>  
+            <Button value={false} text={'Hide'} onClick={() => this.props.dispatch(reset('recipes'))} ></Button>
+        
+        <div>
         </div>
+            </form>
+         </div>
+        
         )
 
         return (
             <div>
                 {this.props.createFormHidden ? createRecipeForm : ''}
             </div>
+           
         )
     }
 }

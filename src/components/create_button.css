@@ -1,0 +1,22 @@
+.createRecipeBtn{
+    padding: 10px 0px 0px 10px;
+    left: 40%;
+    position: absolute;
+    top: 30%;
+    width: 200px;
+    background-color: rgb(245, 184, 219); /* Green */
+    color: rgb(10, 2, 29);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    
+
+
+}
+.createRecipeBtn:hover{
+    background-color: rgb(247, 120, 225);
+}

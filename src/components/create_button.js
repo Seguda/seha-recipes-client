@@ -2,11 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { createform } from '../actions';
 
+
 function Button(props) {
 
     return (
         <div>
-            <button value={props.value} onClick={props.onClick}> {props.text} </button>
+            <button className={props.cls?props.cls:"button"} value={props.value} onClick={props.onClick}> {props.text} </button>
         </div>
     )
 }

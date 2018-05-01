@@ -1,8 +1,39 @@
 .recipeListItem {
-    background: rgb(237, 217, 243);
-    margin-bottom: 8px;
-    padding: 10px;
-    border-radius: 4px;
+    width: 100%;
+	height: auto;
+	background:rgb(237, 247, 195);
+	position: absolute;
+	top: 1px;
+	left: 0;
+	margin: 0;
+	z-index: 1000;
+}
+.content {
+    color: black;
+	background: #e5eb98;
+    position: relative;
+    text-align: center;
+	height: auto;
+	width: 800px;
+	border-radius: 3px;
+	top: 5%;
+	margin: auto auto;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+.content h2 {
+	margin: 0;
+	padding: 0.4em;
+	text-align: center;
+	font-size: 1,5em;
+	font-weight: 50;
+	background: rgba(2, 160, 233, 0.1);
+	border-radius: 3px 3px 0 0;
 }
 
-   
+.content > div {
+	padding: 15px 40px 30px;
+	margin: 0;
+	font-weight: 300;
+    font-size: 1.15em;
+    display:block;
+}
