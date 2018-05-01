@@ -9,23 +9,23 @@ import Header from './header';
 import { ImageUpload } from './upload_image';
 import './create_button.css'
 import './welcome_text.css'
-import './recipe_list.css'
+import './recipes.css'
 
 class Recipes extends Component {
 
     render(){
         return (
             <div>
-                <Header />
-                <SearchBar />
-                <CreateRecipeForm createFormHidden={this.props.createFormHidden} />
-                <Button cls={"createRecipeBtn"} value={true} text={'Create Recipe'} ></Button>
-                <ImageUpload />
-            
-            <div className="main">
-                <RecipeList recipes={this.props.recipes} />
-                <WelcomeText />
-            </div>
+              <Header />
+              <SearchBar />
+              <CreateRecipeForm createFormHidden={this.props.createFormHidden} />
+              <Button cls={"createRecipeBtn"} value={true} text={'Create Recipe'} ></Button>
+              <ImageUpload />
+
+              <div className="main">
+                  <WelcomeText />
+                  <RecipeList recipes={this.props.recipes} />
+              </div>
             </div>
         );
     }

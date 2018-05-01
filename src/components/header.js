@@ -4,15 +4,11 @@ import './header.css';
 export default function Header() {
 
     return (
-        <div className="header">
+        <header>
             <div className="logo">
                 <img src="http://localhost:3000/images/logo.png" alt="logo" className="logo" />
             </div>
-            <header>
-            <div className="h1">
-                Share Your Yummies
-            </div>
-            </header>
-        </div>
+            <h1 className="app-header">Share Your Yummies</h1>
+        </header>
     )
 }

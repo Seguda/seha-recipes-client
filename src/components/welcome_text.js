@@ -4,9 +4,9 @@ import './welcome_text.css';
 
 export default function WelcomeText(props) {
     return (
-        <div className="landing" id="landing" >
+        <div className="landing">
         {/* // style={{ 'display': (props.visibility) ? 'block' : 'none' }}> */}
-            <div className="welcome_text"> 
+            <div className="welcome_text">
                 <h3>Welcome to World of Yummy Recipes </h3>
                     <p>Get your free yummy recipes today and start eating food that makes your soul happy while fueling your body and <strong>share your yummy recipes.</strong> </p>
                     <ul>
@@ -19,7 +19,7 @@ export default function WelcomeText(props) {
                 {/* <Button /> */}
                 </div>
                 </div>
-           
-    
+
+
     );
 }
