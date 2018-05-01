@@ -8,7 +8,7 @@ export default class RecipeListItem extends React.Component {
         return (
             <ul>
             <div className="recipe_list">
-            <div className="recipeListItem" id="list"> 
+            <div className="recipeListItem"> 
                 <div className="content">
                 <h1> {this.props.recipe.name}</h1>
                 <div>

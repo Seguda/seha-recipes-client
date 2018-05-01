@@ -7,7 +7,7 @@ export default function WelcomeText(props) {
         <div className="landing">
         {/* // style={{ 'display': (props.visibility) ? 'block' : 'none' }}> */}
             <div className="welcome_text">
-                <h3>Welcome to World of Yummy Recipes </h3>
+                <h2>Welcome to World of Yummy Recipes </h2>
                     <p>Get your free yummy recipes today and start eating food that makes your soul happy while fueling your body and <strong>share your yummy recipes.</strong> </p>
                     <ul>
                         <li>1. Click the "Create Recipe" button to create a new recipe.</li>
