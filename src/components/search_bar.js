@@ -26,7 +26,7 @@ class SearchBar extends Component {
                 <input type="search" className="search_input" id="search" placeholder="Recipe Search"
                         onChange={(event) => this.props.searchRecipe(event.target.value)}
                 value={text} />
-               
+                    
                 <div className="search_results">
                     {filteredRecipes.map((recipe, index) => {
                         return <li key={index} onClick={() => this.props.displayRecipe(recipe)}>{recipe.name}</li>

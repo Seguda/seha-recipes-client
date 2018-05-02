@@ -19,12 +19,13 @@
   font-size: 15pt;
   left: 50%;
   position: absolute;
-  top: 40%;
+  top: 45%;
   transform: translateX(-50%);
   width: 400px;
 }
 .transparent{
-  color:transparent;
+  display:none;
+  visibility:hidden;
 }
 
 .search_input {

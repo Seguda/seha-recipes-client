@@ -25,6 +25,7 @@ export default class RecipeListItem extends React.Component {
         }
         return (
             <ul>
+                <li>
                 <div className={className}> 
                 <div className="content">
                 <h2> {props.recipe.name}</h2>
@@ -36,14 +37,16 @@ export default class RecipeListItem extends React.Component {
                 <h3>Ingredients: {props.recipe.ingredients}</h3>
                 <h3>Directions: {props.recipe.directions}</h3>
                 <img src={image} alt="some" />
-                
+               
                 </div>
               
                 <p>
                     <button onClick={this.props.closeRecipe}>Close</button>
                 </p>
+                 
                 </div>
              </div>
+                </li>
             </ul>
            
         )
