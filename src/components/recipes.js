@@ -17,7 +17,7 @@ class Recipes extends Component {
         super(props);
         this.state = {
             showRecipe: false,
-            recipe: {},
+            recipe: [],
             text: ''
         }
         this.displayRecipe = this.displayRecipe.bind(this);

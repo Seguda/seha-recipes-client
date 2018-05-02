@@ -21,15 +21,26 @@
     background-color: rgb(235, 121, 121);
 }
 
-/* @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
     .createRecipeBtn  {
-        width: 20%
-    }
-    button.save-button  {
-        width: 20%
-    }
-    
-    button.delete-button {
-        width: 10%
-    }
-}  */
+        width: 30%;
+        left: 35%;
+        top: 10%;
+    } 
+} 
+
+@media only screen and (min-width: 360px) {
+    .createRecipeBtn  {
+        width: 28%;
+        left: 40%;
+        top: 25%;
+    } 
+} 
+
+@media only screen and (min-width: 1200px) {
+    .createRecipeBtn  {
+        width: 20%;
+        left: 40%;
+        top: 25%;
+    } 
+} 
