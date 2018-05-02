@@ -3,29 +3,40 @@ import './recipe_list_item.css';
 
 export default class RecipeListItem extends React.Component {
 
-
+   
     render() {
+        var props = this.props.recipe ? this.props : { recipe: {
+            name: "",
+            author: "",
+            ethnicity: "",
+            type: "",
+            servings: 0,
+            ingredients: "",
+            directions: ""
+            }
+        };
+
+        var className = "recipeListItem " + (this.props.display === "block" ? "block" : "hidden");
+
         return (
             <ul>
-            <div className="recipe_list">
-            <div className="recipeListItem"> 
+                <div className={className}> 
                 <div className="content">
-                <h1> {this.props.recipe.name}</h1>
+                <h2> {props.recipe.name}</h2>
                 <div>
-                <h2>Ahuthor: {this.props.recipe.author}</h2>
-                <h2>Type: {this.props.recipe.type}</h2>
-                <h2>Ethnicity: {this.props.recipe.ethnicity}</h2>
-                <h2>Servings: {this.props.recipe.servings}</h2>
-                <h2>Ingredients: {this.props.recipe.ingredients}</h2>
-                <h2>Directions: {this.props.recipe.directions}</h2>
+                <h3>Ahuthor: {props.recipe.author}</h3>
+                <h3>Type: {props.recipe.type}</h3>
+                <h3>Ethnicity: {props.recipe.ethnicity}</h3>
+                <h3>Servings: {props.recipe.servings}</h3>
+                <h3>Ingredients: {props.recipe.ingredients}</h3>
+                <h3>Directions: {props.recipe.directions}</h3>
                 {/* <img src={this.props.recipe.image} alt="some image" /> */}
                 </div>
               
                 <p>
-                    <button onClick={() => this.props.handle('')}>Close</button>
+                    <button onClick={this.props.closeRecipe}>Close</button>
                 </p>
                 </div>
-             </div>
              </div>
             </ul>
            

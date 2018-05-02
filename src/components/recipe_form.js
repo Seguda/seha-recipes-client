@@ -17,7 +17,7 @@ class CreateRecipeForm extends Component {
                      }>
           
             <h2>Create New a Recipe</h2>
-            <label htmlFor="add name">Recipe Name</label>
+            <label htmlFor="add name">Recipe Name:</label>
             <Field
                 component="input"
                 type="text"
@@ -25,7 +25,7 @@ class CreateRecipeForm extends Component {
                 placeholder="Eclair"
             />
             <br />
-            <label htmlFor="add author">Author</label>
+            <label htmlFor="add author">Author:s</label>
             <Field
                 component="input"
                 type="text"
@@ -35,7 +35,7 @@ class CreateRecipeForm extends Component {
 
             />
             <br />
-            <label htmlFor="add type">Type</label>
+            <label htmlFor="add type">Type:</label>
             <Field
                 component="input"
                 type="text"
@@ -45,7 +45,7 @@ class CreateRecipeForm extends Component {
                 // validate={[required]}
             />
             <br />
-            <label htmlFor="add ethnicity">Ethnicity</label>
+            <label htmlFor="add ethnicity">Ethnicity:</label>
             <Field
                 component="input"
                 type="text"
@@ -55,7 +55,7 @@ class CreateRecipeForm extends Component {
                 // validate={[required]}
             />
             <br />
-            <label htmlFor="add num of servings">Servings</label>
+            <label htmlFor="add num of servings">Servings:</label>
             <Field
                 component="input"
                 type="number"
@@ -68,19 +68,19 @@ class CreateRecipeForm extends Component {
             <label htmlFor="add ingredients">Ingredients:</label>
             <Field
                 component="input"
-                type="text"
-                element="textarea"
+                type="textarea"
+             
                 name="ingredients"
                 id="ingredients"
                 placeholder="Chocolate, Flour, Milk"
                 // validate={[required]}
             />
             <br />
-            <label htmlFor="add directions">Directions</label>
+            <label htmlFor="add directions">Directions:</label>
             <Field
                 component="input"
-                type="text"
-                element="textarea"
+                type="textarea"
+                
                 name="directions"
                 id="directions"
                 placeholder="Pay someone to bake it for you"

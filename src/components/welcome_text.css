@@ -1,6 +1,6 @@
-h3{
+h2{
 
-color:rgb(0, 81, 255);
+color:rgb(3, 22, 80);
 
 }
 
@@ -9,5 +9,8 @@ color:rgb(0, 81, 255);
 }
 
 .welcome_text{
-/* padding: 5px 5px 10px 10px; */
+
+}
+ul{
+	padding:10px 0 0 10px;
 }

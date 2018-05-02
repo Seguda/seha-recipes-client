@@ -6,43 +6,24 @@ import { fetchRecipes } from '../actions';
 class RecipeList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            showRecipe: false,
-            recipe: ''
-        };
     }
 
     componentWillMount() {
         this.props.getList();
     }
 
-    handleClick(recipe) {
-        this.setState({
-            showRecipe: (this.state.showRecipe) ? false : true,
-            recipe 
-        })
-    }
-    render() {
-      
+    render() {      
         const recipes = this.props.recipes.map((recipe, index) => {
             return (
-                <li key={index} onClick={() => this.handleClick(recipe)}>
+                <li key={index} onClick={() => this.props.displayRecipe(recipe)}>
                    {recipe.name}
                 </li>       
             )
         });
         return (
-            
                 <div className="recipeList">
-                    <h3>Recipe List</h3>
+                    <h2>Recipe List</h2>
                     <ul>{recipes}</ul>
-                <div className="recipe_list"> 
-                <ul style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
-               
-                    <RecipeListItem recipe={this.state.recipe} handle={(e) => this.handleClick(e)} />
-               
-                </ul>
-                </div>
             </div> 
         );
     }

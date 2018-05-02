@@ -8,29 +8,12 @@ function searchingFor(text,recipe){
 }
 class SearchBar extends Component {
     constructor(props) {
-        super(props)
-        this.state = {
-            recipe:'',
-            text:'',
-            showRecipe:false,
-        }
-    this.searchHandler=this.searchHandler.bind(this);
-    }
-    searchHandler(event){
-        //console.log(event.target.value);
-        this.setState({text:event.target.value})
+        super(props);
     }
 
-    handleClick(recipe) {
-        this.setState({
-            showRecipe: (this.state.showRecipe) ? false : true,
-            recipe
-        })
-        console.log('count');
-    }
     render() {
-        const{text} = this.state;
-        const {recipes}=this.props;
+        const { text } = this.props;
+        const { recipes }=this.props;
 
        // console.log(recipes);
         let filteredRecipes=recipes.filter(recipe => searchingFor(text,recipe));
@@ -42,18 +25,16 @@ class SearchBar extends Component {
         <div className="search_bar">
                 <img src="http://localhost:3000/images/backgroundpic.jpg" alt="background_img" className="background_img" />
             <div className="search_box">
-                <label htmlFor="search">Recipe Search</label>
-                <input type="text" id="search" className="search_input" placeholder="Recipe Search"
-                onChange={this.searchHandler}
+                    <label htmlFor="search" className="transparent">Recipe Search </label>
+                <input type="search" className="search_input" id="search" placeholder="Recipe Search"
+                        onChange={(event) => this.props.searchRecipe(event.target.value)}
                 value={text} />
+               
                 <div className="search_results">
                     {filteredRecipes.map((recipe, index) => {
-                        return <li key={index} onClick={() => this.handleClick(recipe)}>{recipe.name}</li>
+                        return <li key={index} onClick={() => this.props.displayRecipe(recipe)}>{recipe.name}</li>
                     })}
                 </div>
-                { <div className="recipe_list" style={{ 'display': (this.state.showRecipe) ? 'block' : 'none' }}>
-                    <RecipeListItem recipe={this.state.recipe} handle={(e) => this.handleClick(e)} />
-                </div>}
                 </div>
             </div>
         );
