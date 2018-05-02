@@ -1,15 +1,12 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import RecipeListItem from './recipe_list_item';
+//import RecipeListItem from './recipe_list_item';
 import './search_bar.css'
 
 function searchingFor(text,recipe){
       return recipe.name.toLowerCase().includes(text.toLowerCase());
 }
 class SearchBar extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         const { text } = this.props;

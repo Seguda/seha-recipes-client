@@ -30,6 +30,8 @@
 	font-weight: 50;
 	background: rgba(2, 160, 233, 0.1);
 	border-radius: 3px 3px 0 0;
+	float:left;
+	clear: both;
 }
 
 .content > div {
@@ -38,4 +40,8 @@
 	font-weight: 300;
     font-size: 1.15em;
     display:block;
+}
+.content img{
+	width:100px;
+	height:100px
 }

@@ -12,12 +12,17 @@ export default class RecipeListItem extends React.Component {
             type: "",
             servings: 0,
             ingredients: "",
-            directions: ""
+            directions: "",
+            downloadUrl: ""
             }
         };
 
         var className = "recipeListItem " + (this.props.display === "block" ? "block" : "hidden");
-
+        if(props.recipe.downloadUrl) {
+            var image = `http://localhost:8080/${props.recipe.downloadUrl}`;
+        } else {
+            var image = `http://localhost:8080/static/default.jpg`;
+        }
         return (
             <ul>
                 <div className={className}> 
@@ -30,7 +35,8 @@ export default class RecipeListItem extends React.Component {
                 <h3>Servings: {props.recipe.servings}</h3>
                 <h3>Ingredients: {props.recipe.ingredients}</h3>
                 <h3>Directions: {props.recipe.directions}</h3>
-                {/* <img src={this.props.recipe.image} alt="some image" /> */}
+                <img src={image} alt="some" />
+                
                 </div>
               
                 <p>

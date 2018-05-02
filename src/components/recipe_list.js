@@ -1,12 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import RecipeListItem from './recipe_list_item';
 import { fetchRecipes } from '../actions';
 
 class RecipeList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentWillMount() {
         this.props.getList();

@@ -55,23 +55,21 @@ export const fetchRecipes = () => dispatch => {
 
 };
 
-export const createNewRecipe = ({name, author, type, ethnicity, servings, ingredients, directions, image}) => dispatch => {
-    console.log(name, author, type, ethnicity, servings, ingredients, directions, image);
+export const createNewRecipe = ({file, name, author, type, ethnicity, servings, ingredients, directions}) => dispatch => {
+    console.log(name, author, type, ethnicity, servings, ingredients, directions, file);
+    var data = new FormData();
+    data.append("name", name);
+    data.append("author", author);
+    data.append("type", type);
+    data.append("ethnicity", ethnicity);
+    data.append("servings", servings);
+    data.append("ingredients", ingredients);
+    data.append("directions", directions);
+    data.append("file", file);
+
     return fetch(`${API_BASE_URL}/recipes`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name,
-                author,
-                type,
-                ethnicity,
-                servings,
-                ingredients,
-                directions,
-                image
-            })
+            body: data
         })
             .then(res => {
                 if (!res.ok) {

@@ -1,10 +1,10 @@
 .form_content{
-    width: 110%;
-	height: 130%;
+    width: 100%;
+	height: 1000px;
 	background:rgb(237, 247, 195);
 	position: absolute;
 	top: 110px;
-	left: 0;
+	
 	margin: 0;
 	z-index: 1000;
 }
@@ -65,9 +65,9 @@ label {
     display: inline-block;
 }
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .col-25, .col-75,.form_content [type=submit] {
-        width: 100%;
+        width: 50%;
         margin-top: 0;
     }
 }
@@ -91,4 +91,4 @@ label {
         padding-right: 50px;
         padding-left: 50px;
        }
-    } */
+    }

@@ -5,8 +5,12 @@ import Button from './create_button';
 import './recipe_form.css'
 
 class CreateRecipeForm extends Component {
- 
+    constructor(props) {
+        super(props);
+        this.fileInput = React.createRef();
+    }
     onSubmit(values) {
+        values.file = this.fileInput.current.files[0];
         this.props.dispatch(createNewRecipe(values));
         
     }
@@ -91,10 +95,10 @@ class CreateRecipeForm extends Component {
            <input
                 component="input"
                 type="file"
-                name="image"
-                id="image"
-                placeholder="Image"
-            />
+                name="file"
+                accept="image/*"
+                ref={this.fileInput}
+                />
             <br />
                     
             <button type="submit"
