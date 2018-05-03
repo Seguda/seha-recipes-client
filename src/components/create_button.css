@@ -23,9 +23,9 @@
 
 @media only screen and (min-width: 768px) {
     .createRecipeBtn  {
-        width: 30%;
+        width: 20%;
         left: 35%;
-        top: 10%;
+        top: 15%;
     } 
 } 
 

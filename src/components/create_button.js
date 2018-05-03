@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { createform } from '../actions';
 
 
-function Button(props) {
+function Button (props) {
 
     return (
         <div>

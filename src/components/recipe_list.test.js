@@ -1,12 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Button from './create_button';
+import RecipeList from './recipe_list';
 import store from '../store';
 
-describe('<Button />', () => {
-
+describe('<RecipeList />', () => {
     it('Renders without crashing', () => {
-        shallow(<Button store={store} />);
+        shallow(<RecipeList store={store} />);
     });
 
 });

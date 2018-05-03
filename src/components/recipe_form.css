@@ -38,6 +38,8 @@ input[type=textArea] {
     padding: 12px 20px;
     resize: vertical;
     width: 50%;
+    text-align: justify;
+ 
 
 } 
 .form_content [type=submit] {

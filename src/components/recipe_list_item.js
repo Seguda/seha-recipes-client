@@ -1,7 +1,7 @@
 import React from "react";
 import './recipe_list_item.css';
 
-export default class RecipeListItem extends React.Component {
+export default class   extends React.Component {
 
    
     render() {
