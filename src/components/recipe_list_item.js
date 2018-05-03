@@ -37,9 +37,7 @@ export default class   extends React.Component {
                 <h3>Ingredients: {props.recipe.ingredients}</h3>
                 <h3>Directions: {props.recipe.directions}</h3>
                 <img src={image} alt="some" />
-               
                 </div>
-              
                 <p>
                     <button onClick={this.props.closeRecipe}>Close</button>
                 </p>

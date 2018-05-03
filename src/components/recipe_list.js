@@ -11,17 +11,15 @@ class RecipeList extends React.Component {
     render() {      
         const recipes = this.props.recipes.map((recipe, index) => {
             return (
-                
-                <li key={index} onClick={() => this.props.displayRecipe(recipe)}>
-                   {recipe.name}
-                </li>  
-                   
+            <li key={index} onClick={() => this.props.displayRecipe(recipe)}>
+               {recipe.name}
+            </li>                 
             )
         });
         return (
-                <div className="recipeList">
-                    <h2>Recipe List</h2>
-                    <ul>{recipes}</ul>
+            <div className="recipeList">
+                <h2>Recipe List</h2>
+                <ul>{recipes}</ul>
             </div> 
         );
     }

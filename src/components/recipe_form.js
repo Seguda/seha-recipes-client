@@ -12,14 +12,12 @@ class CreateRecipeForm extends Component {
     onSubmit(values) {
         values.file = this.fileInput.current.files[0];
         this.props.dispatch(createNewRecipe(values));
-        
     }
     render() {
         const createRecipeForm = (
             <div className="form_content">
             <form onSubmit = {this.props.handleSubmit(values => this.onSubmit(values))
-                     }>
-          
+                    }>
             <h2>Create New a Recipe</h2>
             <label htmlFor="add name">Recipe Name:</label>
             <Field
@@ -56,7 +54,6 @@ class CreateRecipeForm extends Component {
                 name="ethnicity"
                 id="ethnicity"
                 placeholder="French"
-                // validate={[required]}
             />
             <br />
             <label htmlFor="add num of servings">Servings:</label>
@@ -66,29 +63,24 @@ class CreateRecipeForm extends Component {
                 name="servings"
                 id="servings"
                 placeholder="4"
-                // validate={[required]}
             />
             <br />
             <label htmlFor="add ingredients">Ingredients:</label>
             <Field
                 component="input"
                 type="textarea"
-             
                 name="ingredients"
                 id="ingredients"
                 placeholder="Chocolate, Flour, Milk"
-                // validate={[required]}
             />
             <br />
             <label htmlFor="add directions">Directions:</label>
             <Field
                 component="input"
                 type="textarea"
-                
                 name="directions"
                 id="directions"
                 placeholder="Pay someone to bake it for you"
-                // validate={[required]}
             />
             <br />
             <label htmlFor="add image">Recipe Image</label>

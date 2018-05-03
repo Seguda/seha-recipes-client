@@ -23,7 +23,7 @@ class SearchBar extends Component {
                 <img src="http://localhost:3000/images/backgroundpic.jpg" alt="background_img" className="background_img" />
             <div className="search_box">
                     <label htmlFor="search" className="transparent">Recipe Search </label>
-                <input type="search" className="search_input" id="search" placeholder="Recipe Search"
+                <input type="search" title="search" className="search_input" id="search" placeholder="Recipe Search"
                         onChange={(event) => this.props.searchRecipe(event.target.value)}
                 value={text} />
                     
