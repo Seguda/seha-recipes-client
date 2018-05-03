@@ -1,10 +1,10 @@
 import * as actions from '../actions';
 import { API_BASE_URL } from '../config';
 
-export const RECIPE_SUBMIT = 'RECIPE_SUBMIT';
-export const submitNewRecipe = () => ({
-    type: RECIPE_SUBMIT
-});
+// export const RECIPE_SUBMIT = 'RECIPE_SUBMIT';
+// export const submitNewRecipe = () => ({
+//     type: RECIPE_SUBMIT
+// });
 
 export const FETCH_RECIPE_REQUEST = 'FETCH_RECIPE_REQUEST';
 export const fetchRecipeRequest = () => ({

@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import recipeReducer from './reducers';
 import { fetchRecipes } from './actions';
 import thunk from 'redux-thunk';
 import Recipes from './components/recipes';
 import './index.css';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import recipeReducer from './reducers';
 import registerServiceWorker from './registerServiceWorker';
-
+import store from './store'
 import WebFont from 'webfontloader';
 
 WebFont.load({
@@ -19,15 +19,8 @@ WebFont.load({
   }
 });
 
-const store = createStore(
-  combineReducers({
-    form: formReducer,
-    recipeReducer
-  }),
-  composeWithDevTools(applyMiddleware(thunk)
-));
-store.dispatch(fetchRecipes());
 
+store.dispatch(fetchRecipes());
 
 
 ReactDOM.render(
