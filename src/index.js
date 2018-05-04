@@ -6,10 +6,10 @@ import { reducer as formReducer } from 'redux-form';
 import recipeReducer from './reducers';
 import { fetchRecipes } from './actions';
 import thunk from 'redux-thunk';
-import Recipes from './components/recipes';
-import './index.css';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import registerServiceWorker from './registerServiceWorker';
+
+import App from './App';
 
 import WebFont from 'webfontloader';
 
@@ -28,11 +28,9 @@ const store = createStore(
 ));
 store.dispatch(fetchRecipes());
 
-
-
 ReactDOM.render(
   <Provider store={store}>
-    <Recipes createFormHidden={true}/>
+    <App />
   </Provider>, document.getElementById('root')
 );
 registerServiceWorker();

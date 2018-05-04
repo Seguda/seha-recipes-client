@@ -32,6 +32,20 @@ const recipeReducer = (state = initialState, action) => {
         });
     } else if (action.type === actions.RECIPE_SUBMIT) {
 
+    } else if (action.type === actions.SET_RECIPE) {
+      return Object.assign({}, state, {
+        recipe: action.recipe
+      });
+    } else if (action.type === actions.DO_SEARCH) {
+      let _results = state.recipes.filter((item, index) => {
+        return item.name === action.term;
+      });
+      console.log(_results);
+      return Object.assign({}, state, {
+        term: action.term,
+        results: _results,
+        searchExec: true
+      });
     }
 
     return state;
