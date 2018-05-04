@@ -11,6 +11,10 @@ class Header extends React.Component {
     this.state = {
       navs: [
         {
+          link: "Home",
+          href: "/home"
+        },
+        {
           link: "All Recipes",
           href: "/recipes"
         },
@@ -23,6 +27,12 @@ class Header extends React.Component {
   }
 
   render() {
+    const links = this.state.navs.map((link, index) => {
+      return (
+        <NavItem key={index} {...link} />
+      )
+    });
+
     const header = (
       <div>
         <div className="header">
@@ -31,6 +41,7 @@ class Header extends React.Component {
                <img src="http://localhost:3000/images/logo.png" alt="logo" className="logo" />
            </div>
            <h1 className="app-header">Share Your Yummies</h1>
+           {links}
            <Search />
          </div>
         </div>

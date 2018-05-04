@@ -41,7 +41,11 @@ const recipeReducer = (state = initialState, action) => {
       });
     } else if (action.type === actions.DO_SEARCH) {
       let _results = state.recipes.filter((item, index) => {
-        return item.name === action.term;
+        let _item = item.name.toLowerCase().split(" ");
+        if(_item.indexOf(action.term.toLowerCase()) >= 0) {
+            return item.name
+        }
+        // return item.name === action.term;
       });
       console.log(_results);
       return Object.assign({}, state, {

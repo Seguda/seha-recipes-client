@@ -19,12 +19,25 @@ class Recipe extends React.Component {
   }
 
   render() {
-    var className = "recipeListItem " + (this.props.display === "block" ? "block" : "hidden");
-    // if(props.recipe.downloadUrl) {
-    //     var image = `http://localhost:8080/${props.recipe.downloadUrl}`;
-    // } else {
-    //     var image = `http://localhost:8080/static/default.jpg`;
-    // }
+    var props = this.props.recipe ? this.props : {
+      recipe: {
+        name: "",
+        author: "",
+        ethnicity: "",
+        type: "",
+        servings: 0,
+        ingredients: "",
+        directions: "",
+        downloadUrl: ""
+      }
+    };
+    console.log(props.recipe);
+    var className = "recipeListItem " + (props.display === "block" ? "block" : "hidden");
+    if(props.recipe.downloadUrl) {
+        var image = `http://localhost:8080/${props.recipe.downloadUrl}`;
+    } else {
+        var image = `http://localhost:8080/static/default.jpg`;
+    }
 
     return (
       <ul>
@@ -37,6 +50,7 @@ class Recipe extends React.Component {
             <h3>Servings: {this.state.steps.servings}</h3>
             <h3>Ingredients: {this.state.steps.ingredients}</h3>
             <h3>Directions: {this.state.steps.directions}</h3>
+            <img src={image}/>
           </div>
         </li>
       </ul>

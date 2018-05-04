@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { Route} from 'react-router-dom';
 import './main.css';
 import Landing from '../landing/landing';
 import Recipes from '../recipes/recipes'
