@@ -7,7 +7,6 @@ class RecipeList extends React.Component {
     componentWillMount() {
         this.props.getList();
     }
-
     render() {      
         const recipes = this.props.recipes.map((recipe, index) => {
             return (
@@ -28,7 +27,6 @@ class RecipeList extends React.Component {
 const mapStateToProps = (state) => ({
     recipes: state.recipeReducer.recipes
 })
-
 const mapDispatchToProps = (dispatch) => ({
     getList: () => dispatch(fetchRecipes())
 })

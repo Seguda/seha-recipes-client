@@ -96,9 +96,6 @@ class CreateRecipeForm extends Component {
             <button type="submit"
             className="add_recipe">Save</button>  
             <Button value={false} text={'Hide'} onClick={() => this.props.dispatch(reset('recipes'))} ></Button>
-        
-        <div>
-        </div>
             </form>
          </div>
         

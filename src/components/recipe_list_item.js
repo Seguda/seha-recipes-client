@@ -1,7 +1,7 @@
 import React from "react";
 import './recipe_list_item.css';
 
-export default class   extends React.Component {
+export default class RecipeListItem extends React.Component {
 
    
     render() {
@@ -43,7 +43,7 @@ export default class   extends React.Component {
                 </p>
                  
                 </div>
-             </div>
+                </div>
                 </li>
             </ul>
            
