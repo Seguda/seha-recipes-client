@@ -3,11 +3,23 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './header.css';
 import Search from '../search/search';
+import NavItem from '../navItem/navitem';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      navs: [
+        {
+          link: "All Recipes",
+          href: "/recipes"
+        },
+        {
+          link: "Add Recipe",
+          href: "/new"
+        }
+      ]
+    };
   }
 
   render() {

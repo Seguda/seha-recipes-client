@@ -39,7 +39,7 @@ class SearchResults extends Component {
     return (
       <div className="main">
         <div className="recipeList">
-          <h2>Recipe List</h2>
+          <h2>Search Results</h2>
           <ul>{results}</ul>
         </div>
       </div>
