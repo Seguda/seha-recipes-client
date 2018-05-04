@@ -30,9 +30,12 @@ const recipeReducer = (state = initialState, action) => {
        return Object.assign({}, state, {
             createFormHidden: action.createFormHidden
         });
-    } else if (action.type === actions.RECIPE_SUBMIT) {
+    }
+    // } else if (action.type === actions.RECIPE_SUBMIT) {
 
-    } else if (action.type === actions.SET_RECIPE) {
+
+    // } 
+     else if (action.type === actions.SET_RECIPE) {
       return Object.assign({}, state, {
         recipe: action.recipe
       });
