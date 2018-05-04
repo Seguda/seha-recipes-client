@@ -4,7 +4,7 @@
 	background:rgb(237, 247, 195);
 	position: absolute;
 	top: 110px;
-	
+
 	margin: 0;
 	z-index: 1000;
 }
@@ -16,7 +16,7 @@ input[type=text] {
     border: 3px #555;
     border-bottom: 2px solid rgb(223, 186, 24);
     display: inline-block;
-    
+
 }
 input[type=number] {
     box-sizing: border-box;
@@ -39,9 +39,9 @@ input[type=textArea] {
     resize: vertical;
     width: 50%;
     text-align: justify;
- 
 
-} 
+
+}
 .form_content [type=submit] {
     background-color: whitesmoke;
     border: 2px solid rgb(211, 214, 19);
@@ -75,7 +75,7 @@ label {
 }
 
 @media only screen and (min-width: 768px) {
-    .form_content{ 
+    .form_content{
         margin-right: 50px;
         margin-left: 50px;
         padding-right: 20px;
@@ -84,10 +84,10 @@ label {
 
        }
 
-} 
+}
 
 @media only screen and (min-width: 1024px) {
-    .form_content { 
+    .form_content {
         margin-right: 100px;
         margin-left: 20px;
         padding-right: 50px;

@@ -5,6 +5,12 @@
   width: 90px;
 }
 
+.header {
+  background-color: #EA8F8F;
+  color: #1B1B2C;
+  padding: 14px 0;
+}
+
 .app-header {
   display: inline-block;
   vertical-align: middle;

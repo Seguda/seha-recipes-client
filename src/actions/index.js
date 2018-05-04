@@ -27,7 +27,23 @@ export const CREATE_RECIPE = 'CREATE_RECIPE'
 export const createrecipe = (recipe) => ({
     type: CREATE_RECIPE,
     recipe
-})
+});
+
+export const SET_RECIPE = 'SET_RECIPE'
+export const setRecipe = (recipe) => {
+  return {
+    type: SET_RECIPE,
+    recipe
+  }
+};
+
+export const DO_SEARCH = 'DO_SEARCH'
+export const doSearch = (term) => {
+  return {
+    type: DO_SEARCH,
+    term
+  }
+};
 
 export const CREATE_FORM = 'CREATE_FORM'
 export const createform = function(createFormHidden)  {

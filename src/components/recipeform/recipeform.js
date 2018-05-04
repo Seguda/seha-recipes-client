@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, reset} from 'redux-form';
-import { createNewRecipe }  from '../actions';
-import Button from './create_button';
-import './recipe_form.css'
+import { createNewRecipe }  from '../../actions';
+// import Button from './create_button';
+import './recipeform.css'
 
-class CreateRecipeForm extends Component {
+class RecipeForm extends Component {
     constructor(props) {
         super(props);
         this.fileInput = React.createRef();
@@ -17,7 +17,8 @@ class CreateRecipeForm extends Component {
         const createRecipeForm = (
             <div className="form_content">
             <form onSubmit = {this.props.handleSubmit(values => this.onSubmit(values))
-                    }>
+                     }>
+
             <h2>Create New a Recipe</h2>
             <label htmlFor="add name">Recipe Name:</label>
             <Field
@@ -92,20 +93,23 @@ class CreateRecipeForm extends Component {
                 ref={this.fileInput}
                 />
             <br />
-                    
+
             <button type="submit"
-            className="add_recipe">Save</button>  
-            <Button value={false} text={'Hide'} onClick={() => this.props.dispatch(reset('recipes'))} ></Button>
+            className="add_recipe">Save</button>
+            {/*}<Button value={false} text={'Hide'} onClick={() => this.props.dispatch(reset('recipes'))} ></Button>*/}
+
+        <div>
+        </div>
             </form>
          </div>
-        
+
         )
 
         return (
             <div>
                 {this.props.createFormHidden ? createRecipeForm : ''}
             </div>
-           
+
         )
     }
 }
@@ -114,4 +118,4 @@ class CreateRecipeForm extends Component {
 
 export default reduxForm({
     form: 'recipes'
-})(CreateRecipeForm);
+})(RecipeForm);

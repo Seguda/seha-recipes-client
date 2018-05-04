@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { fetchRecipes } from './actions';
-import Recipes from './components/recipes';
-import './index.css';
+//import thunk from 'redux-thunk';
+//import { composeWithDevTools } from 'redux-devtools-extension';
 import registerServiceWorker from './registerServiceWorker';
-import store from './store'
+
+import App from './App';
+
 import WebFont from 'webfontloader';
 
 WebFont.load({
@@ -14,13 +16,11 @@ WebFont.load({
   }
 });
 
-
 store.dispatch(fetchRecipes());
-
 
 ReactDOM.render(
   <Provider store={store}>
-    <Recipes createFormHidden={true}/>
+    <App />
   </Provider>, document.getElementById('root')
 );
 registerServiceWorker();
