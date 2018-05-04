@@ -1,11 +1,28 @@
-.form_content{
-    width: 90%;
-	background:rgb(237, 247, 195);
-	top: 110px;
-    padding: 30px 0px 0px 40px;
-    z-index: 1000;
+.formcontent{
+
 }
-input[type=text] {
+
+.formcontent li {
+  margin: 12px 0;
+}
+
+.fields li label {
+  display: inline-block;
+  font-weight: bold;
+  min-width: 120px;
+}
+
+.fields li input {
+  outline: none;
+  padding: 4px 0;
+  width: 160px;
+}
+
+.fields li input[type="textarea"] {
+  height: 64px;
+}
+
+/* input[type=text] {
     width: 50%;
     padding: 12px 20px;
     margin: 10px 8px 10px;
@@ -24,7 +41,6 @@ input[type=number] {
     width: 50%;
 }
 input[type=textArea] {
-    background-color: white;
     border: 3px #555;
     border-bottom: 2px solid rgb(223, 186, 24);
     border-radius: 4px;
@@ -40,14 +56,13 @@ input[type=textArea] {
 
 }
 .form_content [type=submit] {
-    background-color: whitesmoke;
     border: 2px solid rgb(211, 214, 19);
     color: black;
     padding: 10px 32px;
     text-decoration: none;
     margin: 10px 10px;
     cursor: pointer;
-}
+} */
 
 /* .button{
    background-color: whitesmoke;
@@ -59,16 +74,9 @@ input[type=textArea] {
     cursor: pointer;
 } */
 
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-}
 
 @media screen and (max-width: 600px) {
-    .col-25, .col-75,.form_content [type=submit] {
-        width: 50%;
-        margin-top: 0;
-    }
+
 }
 
 @media only screen and (min-width: 768px) {

@@ -18,100 +18,114 @@ class RecipeForm extends Component {
     }
     render() {
         const createRecipeForm = (
-            <div className="form_content">
-            <form onSubmit = {this.props.handleSubmit(values => this.onSubmit(values))
-                     }>
+          <div className="formcontent">
+            <form className="wrap" onSubmit = {this.props.handleSubmit(values => this.onSubmit(values))
+            }>
 
-            <h2>Create New a Recipe</h2>
-            <label htmlFor="add name">Recipe Name:</label>
-            <Field
-                component="input"
-                type="text"
-                name="name"
-                placeholder="Eclair"
-            />
-            <br />
-            <label htmlFor="add author">Author:</label>
-            <Field
-                component="input"
-                type="text"
-                name="author"
-                id="author"
-                placeholder="Sam"
+              <h2>Create New a Recipe</h2>
 
-            />
-            <br />
-            <label htmlFor="add type">Type:</label>
-            <Field
-                component="input"
-                type="text"
-                name="type"
-                id="type"
-                placeholder="Dessert"
-                // validate={[required]}
-            />
-            <br />
-            <label htmlFor="add ethnicity">Ethnicity:</label>
-            <Field
-                component="input"
-                type="text"
-                name="ethnicity"
-                id="ethnicity"
-                placeholder="French"
-            />
-            <br />
-            <label htmlFor="add num of servings">Servings:</label>
-            <Field
-                component="input"
-                type="number"
-                name="servings"
-                id="servings"
-                placeholder="4"
-            />
-            <br />
-            <label htmlFor="add ingredients">Ingredients:</label>
-            <Field
-                component="input"
-                type="textarea"
-                name="ingredients"
-                id="ingredients"
-                placeholder="Chocolate, Flour, Milk"
-            />
-            <br />
-            <label htmlFor="add directions">Directions:</label>
-            <Field
-                component="input"
-                type="textarea"
-                name="directions"
-                id="directions"
-                placeholder="Pay someone to bake it for you"
-            />
-            <br />
-            <label htmlFor="add image">Recipe Image</label>
-           <input
-                component="input"
-                type="file"
-                name="file"
-                accept="image/*"
-                ref={this.fileInput}
-                />
-            <br />
+              <ul className="fields">
 
-            <button type="submit" className="add_recipe">Save</button>
-            {/* <Button value={false} text={'Hide'} onClick={() => this.props.dispatch(reset('recipes'))} ></Button>  */}
+                <li>
+                  <label htmlFor="add name">Recipe Name:</label>
+                  <Field
+                    component="input"
+                    type="text"
+                    name="name"
+                    placeholder="Eclair"
+                  />
+                </li>
 
-        <div>
-        </div>
+                <li>
+                  <label htmlFor="add author">Author:</label>
+                  <Field
+                    component="input"
+                    type="text"
+                    name="author"
+                    id="author"
+                    placeholder="Sam"
+                  />
+                </li>
+
+                <li>
+                  <label htmlFor="add type">Type:</label>
+                  <Field
+                    component="input"
+                    type="text"
+                    name="type"
+                    id="type"
+                    placeholder="Dessert"
+                    // validate={[required]}
+                  />
+                </li>
+
+                <li>
+                  <label htmlFor="add ethnicity">Ethnicity:</label>
+                  <Field
+                    component="input"
+                    type="text"
+                    name="ethnicity"
+                    id="ethnicity"
+                    placeholder="French"
+                  />
+                </li>
+
+                <li>
+                  <label htmlFor="add num of servings">Servings:</label>
+                  <Field
+                    component="input"
+                    type="number"
+                    name="servings"
+                    id="servings"
+                    placeholder="4"
+                  />
+                </li>
+
+                <li>
+                  <label htmlFor="add ingredients">Ingredients:</label>
+                  <Field
+                    component="input"
+                    type="textarea"
+                    name="ingredients"
+                    id="ingredients"
+                    placeholder="Chocolate, Flour, Milk"
+                  />
+                </li>
+
+                <li>
+                  <label htmlFor="add directions">Directions:</label>
+                  <Field
+                    component="input"
+                    type="textarea"
+                    name="directions"
+                    id="directions"
+                    placeholder="Pay someone to bake it for you"
+                  />
+                </li>
+
+                <li>
+                  <label htmlFor="add image">Recipe Image</label>
+                  <input
+                    component="input"
+                    type="file"
+                    name="file"
+                    accept="image/*"
+                    ref={this.fileInput}
+                  />
+                </li>
+
+              </ul>
+
+              <button type="submit" className="add_recipe">Save</button>
+              {/* <Button value={false} text={'Hide'} onClick={() => this.props.dispatch(reset('recipes'))} ></Button>  */}
+
             </form>
-         </div>
+          </div>
 
         )
 
         return (
-            <div>
-                {createRecipeForm}
-            </div>
-
+          <div>{createRecipeForm}</div>
         )
     }
 }

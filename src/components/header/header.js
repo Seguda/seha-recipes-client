@@ -34,17 +34,17 @@ class Header extends React.Component {
     });
 
     const header = (
-      <div>
-        <div className="header">
-         <div className="wrap">
-           <div className="logo">
-               <img src="http://localhost:3000/images/logo.png" alt="logo" className="logo" />
-           </div>
-           <h1 className="app-header">Share Your Yummies</h1>
-           {links}
-           <Search />
+      <div className="header">
+       <div className="wrap">
+         <div className="logo">
+             <img src="http://localhost:3000/images/logo.png" alt="logo" className="logo" />
          </div>
-        </div>
+         <h1 className="app-header">Share Your Yummies</h1>
+         <ul className="navs">
+           {links}
+         </ul>
+         <Search />
+       </div>
       </div>
     )
     if (this.props.searchExec) {
@@ -52,7 +52,7 @@ class Header extends React.Component {
       return (
         <div>
           {header}
-          <Redirect to={_param} />;
+          <Redirect to={_param} />
         </div>
       )
     }

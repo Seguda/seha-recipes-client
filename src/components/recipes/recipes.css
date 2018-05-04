@@ -1,8 +1,7 @@
-.main {
-  margin: 16px auto;
-  width: 90%;
+.recipelist {
+  padding-left: 16px;
 }
 
-li {
-  cursor: pointer;
+.recipelist li {
+  margin: 6px 0;
 }

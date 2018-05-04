@@ -1,5 +1,6 @@
 h2 {
-	color: rgb(3, 22, 80);
+	color: #ef0049;
+	margin: 20px 0 12px;
 }
 
 .landing {
@@ -10,10 +11,25 @@ h2 {
 	padding: 20px 0;
 }
 
-ol {
-	padding: 10px 0 0 28px;
+.landingsteps {
+	padding-left: 22px;
 }
 
-li {
-	margin: 6px 0;
+.landingsteps li {
+	margin: 14px 0;
+}
+
+.landingsteps span {
+	font-style: italic;
+}
+
+.enjoy {
+	text-align: center;
+}
+
+.enjoy p {
+	color: #4c84ad;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 30px 0;
 }

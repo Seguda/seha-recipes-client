@@ -1,24 +1,20 @@
-.search_bar {
-  padding: 20px 0;
+.searchbar {
+  margin: 0 auto;
+  width: 80%;
 }
 
-/* .search_box {
-  color: #101111;
-  font-size: 15pt;
-  left: 50%;
-  position: absolute;
-  top: 45%;
-  transform: translateX(-50%);
-  width: 200px;
-} */
-
-.search_input {
+.searchbar input {
   background: #f3f3f3;
   border: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
   outline: none;
   padding: 10px;
-  width: 200px;
+  width: 80%;
+}
+
+.searchbar button {
+  background: #f29f01;
+  border: none;
+  cursor: pointer;
+  padding: 10px 0;
+  width: 20%;
 }

@@ -23,11 +23,6 @@ class Search extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const _term = this.state.term;
-    // this.setState((prevState, props) => {
-    //   return {
-    //     executeSearch: true
-    //   }
-    // })
     this.props.dispatch(doSearch(_term));
   }
 
@@ -44,19 +39,14 @@ class Search extends Component {
   }
 
     render() {
-      // if (this.state.executeSearch) {
-      //   let _param = `/search?term=${this.state.term.toLowerCase()}`;
-      //   return <Redirect to={_param} />;
-      // }
       return (
-        <form className="search_bar" onSubmit={(e) => this.handleSubmit(e)}>
+        <form className="searchbar" onSubmit={(e) => this.handleSubmit(e)}>
           <input  type="search"
-                  className="search_input"
                   placeholder="Recipe Search"
                   onChange={this.handleChange}
                   ref={input => this.textInput = input}
           />
-          <button type="submit">Search</button>
+          <button type="submit">Go!</button>
         </form>
       );
     }

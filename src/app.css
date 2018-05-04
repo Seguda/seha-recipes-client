@@ -4,6 +4,16 @@
   padding: 0;
 }
 
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  color: crimson;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
@@ -13,12 +23,16 @@ body {
 html {
 	width: 100%;
 	height: 100%;
-	background-color: rgb(231, 114, 114);
 }
 
 h1 {
   font-size: 1.575rem;
   font-family: 'Grand Hotel';
+}
+
+img {
+  height: auto;
+  width: 100%;
 }
 
 ul {

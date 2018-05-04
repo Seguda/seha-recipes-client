@@ -45,11 +45,9 @@ class Recipes extends Component {
       )
     });
     return (
-      <div className="main">
-        <div className="recipeList">
-          <h2>Recipe List</h2>
-          <ul>{recipes}</ul>
-        </div>
+      <div className="wrap">
+        <h2>Pure Joy Below</h2>
+        <ul className="recipelist">{recipes}</ul>
       </div>
     );
   }

@@ -40,20 +40,22 @@ class Recipe extends React.Component {
     }
 
     return (
-      <ul>
-        <li>
-          <div className="content">
-            <h2>{this.state.steps.name}</h2>
-            <h3>Author: {this.state.steps.author}</h3>
-            <h3>Type: {this.state.steps.type}</h3>
-            <h3>Ethnicity: {this.state.steps.ethnicity}</h3>
-            <h3>Servings: {this.state.steps.servings}</h3>
-            <h3>Ingredients: {this.state.steps.ingredients}</h3>
-            <h3>Directions: {this.state.steps.directions}</h3>
-            <img src={image}/>
+      <div className="singlerecipe">
+        <div className="wrap">
+          <div className="nimg">
+            <img src={image} />
           </div>
-        </li>
-      </ul>
+          <div className="recipetitle">{this.state.steps.name}</div>
+          <ul>
+            <li><span>Author:</span>{this.state.steps.author}</li>
+            <li><span>Type:</span>{this.state.steps.type}</li>
+            <li><span>Ethnicity:</span>{this.state.steps.ethnicity}</li>
+            <li><span>Servings:</span>{this.state.steps.servings}</li>
+            <li><span>Ingredients:</span>{this.state.steps.ingredients}</li>
+            <li><span>Directions:</span>{this.state.steps.directions}</li>
+          </ul>
+        </div>
+      </div>
     )
   }
 }

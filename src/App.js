@@ -5,14 +5,10 @@ import './app.css';
 
 import Main from './components/main/main';
 import Header from './components/header/header';
-// import Footer from './components/footer/footer';
+import Footer from './components/footer/footer';
 
 
 class App extends Component {
-
-  // constructor(props){
-  //   super(props);
-  // }
 
   render() {
     return (
@@ -20,7 +16,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <Main />
-          {/*<Footer />*/}
+          <Footer />
         </div>
       </Router>
     );

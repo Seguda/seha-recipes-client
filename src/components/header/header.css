@@ -16,3 +16,13 @@
   vertical-align: middle;
   margin-left: 10px;
 }
+
+.navs {
+  margin: 10px 0 16px;
+  text-align: center;
+}
+
+.navs li {
+  display: inline-block;
+  margin: 0 10px;
+}

@@ -5,9 +5,9 @@ import './navitem.css';
 export default class NavItem extends React.Component {
   render() {
     return (
-      <div>
+      <li>
         <Link to={{pathname: this.props.href}}>{this.props.link}</Link>
-      </div>
+      </li>
     );
   }
 }
