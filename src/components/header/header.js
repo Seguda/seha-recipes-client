@@ -37,7 +37,7 @@ class Header extends React.Component {
       <div className="header">
        <div className="wrap">
          <div className="logo">
-             <img src="http://localhost:3000/images/logo.png" alt="logo" className="logo" />
+             <img src="/images/logo.png" alt="logo" className="logo" />
          </div>
          <h1 className="app-header">Share Your Yummies</h1>
          <ul className="navs">
