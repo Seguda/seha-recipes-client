@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CreateRecipeForm from './recipe_form';
-import Button from './create_button';
+import RecipeForm from '../recipeform/recipeform';
+//import Button from './create_button';
 import { reset } from 'redux-form';
-import { createNewRecipe } from '../actions';
+import { createNewRecipe } from '../../actions/index';
 
-describe('<CreateRecipeForm />', () => {
+describe('<RecipeForm />', () => {
     it('Renders without crashing', () => {
-        shallow(<CreateRecipeForm />);
+        shallow(<RecipeForm />);
     });
 
 // it('Should dispatch createform when the form is submitted', () => {

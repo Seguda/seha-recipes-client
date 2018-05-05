@@ -45,7 +45,7 @@ const recipeReducer = (state = initialState, action) => {
         if(_item.indexOf(action.term.toLowerCase()) >= 0) {
             return item.name
         }
-        // return item.name === action.term;
+         return item.name === action.term;
       });
       console.log(_results);
       return Object.assign({}, state, {

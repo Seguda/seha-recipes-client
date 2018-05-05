@@ -1,6 +1,6 @@
 .searchbar {
   margin: 0 auto;
-  width: 80%;
+  width: 50%;
 }
 
 .searchbar input {
@@ -8,7 +8,7 @@
   border: none;
   outline: none;
   padding: 10px;
-  width: 80%;
+  width: 50%;
 }
 
 .searchbar button {

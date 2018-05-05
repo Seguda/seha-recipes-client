@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { doSearch } from '../../actions';
 import './search.css'
 
-function searchingFor(text,recipe){
-      // return recipe.name.toLowerCase().includes(text.toLowerCase());
-}
+
 class Search extends Component {
   constructor(props) {
     super(props);

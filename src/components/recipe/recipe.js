@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { API_BASE_URL } from '../../config';
 import './recipe.css';
 
 class Recipe extends React.Component {
@@ -43,7 +44,7 @@ class Recipe extends React.Component {
       <div className="singlerecipe">
         <div className="wrap">
           <div className="nimg">
-            <img src="{image}" />
+            <img src={API_BASE_URL + image} alt="visual"/>
           </div>
           <div className="recipetitle">{this.state.steps.name}</div>
           <ul>
