@@ -34,16 +34,16 @@ class Recipe extends React.Component {
     console.log(props.recipe);
     var className = "recipeListItem " + (props.display === "block" ? "block" : "hidden");
     if(props.recipe.downloadUrl) {
-        var image = `/image/${props.recipe.downloadUrl}`;
+        var image = `/${props.recipe.downloadUrl}`;
     } else {
-        var image = `/image/static/default.jpg`;
+        var image = `/images/default.jpg`;
     }
 
     return (
       <div className="singlerecipe">
         <div className="wrap">
           <div className="nimg">
-            <img src={image} />
+            <img src="{image}" />
           </div>
           <div className="recipetitle">{this.state.steps.name}</div>
           <ul>
