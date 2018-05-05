@@ -17,7 +17,7 @@ export class ImageUpload extends React.Component {
         var data = new FormData();
         data.append("file", this.fileInput.files[0]);
 
-       // "http://localhost:8000/upload"
+       
         axios.post(`${API_BASE_URL}/recipes/upload`, data, {
             headers: { 'Content-Type': 'multipart/form-data' }
         })

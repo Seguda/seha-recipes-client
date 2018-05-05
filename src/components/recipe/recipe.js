@@ -34,9 +34,9 @@ class Recipe extends React.Component {
     console.log(props.recipe);
     var className = "recipeListItem " + (props.display === "block" ? "block" : "hidden");
     if(props.recipe.downloadUrl) {
-        var image = `http://localhost:8080/${props.recipe.downloadUrl}`;
+        var image = `/image/${props.recipe.downloadUrl}`;
     } else {
-        var image = `http://localhost:8080/static/default.jpg`;
+        var image = `/image/static/default.jpg`;
     }
 
     return (
