@@ -2,6 +2,59 @@
   padding-left: 16px;
 }
 
-.recipelist li {
-  margin: 6px 0;
+.recipelist li {  
+
+	display: inline-block;
+	width: 45%;
+	border: 1px solid #F6CECE;
+	border-radius: 0.5rem; 
+	list-style: none;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 2rem;
+	min-height: 20rem;
+	position: relative;
+	
+	-webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+
+}
+.recipelist li:hover {  
+background-color:  #f1e4cc;
+  cursor: pointer;
+
+}
+.recipelist .recipeimg {
+  float:left;
+  width: 40%;
+  display: inline-block;
+  margin: 3rem 2rem;
+}
+
+.recipeimg img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  width:  120px;
+  height: 120px;
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+  
+}
+
+ p {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  width: 50%;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  
 }

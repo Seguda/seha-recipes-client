@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {setRecipe} from '../../actions';
 import {Link} from 'react-router-dom';
 import './recipes.css'
+import { API_BASE_URL } from '../../config';
 
 class Recipes extends Component {
   constructor(props) {
@@ -38,8 +39,10 @@ class Recipes extends Component {
       let _param = `/recipes/${recipe.name.toLowerCase()}`;
       return (
         <Link key={index} to={{pathname: _param}}>
-          <li onClick={() => this.setRecipe(recipe)}>
-             {recipe.name}
+          <li className="recipeimg" onClick={() => this.setRecipe(recipe)}>
+            <img src={`${API_BASE_URL + "/" + recipe.downloadUrl}`} />
+            <p> {recipe.name} </p>
+            <p> {recipe.type} </p>
           </li>
         </Link>
       )
