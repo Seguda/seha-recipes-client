@@ -3,18 +3,11 @@
 }
 
 .recipelist li {  
-
-	display: inline-block;
-	width: 45%;
 	border: 1px solid #F6CECE;
 	border-radius: 0.5rem; 
-	list-style: none;
-	margin-left: 2%;
-	margin-right: 2%;
-	margin-bottom: 2rem;
-	min-height: 20rem;
+  list-style: none;
+  margin-bottom: 16px;
 	position: relative;
-	
 	-webkit-transition: background-color 2s ease-out;
   -moz-transition: background-color 2s ease-out;
   -o-transition: background-color 2s ease-out;
@@ -24,14 +17,34 @@
 .recipelist li:hover {  
 background-color:   #f29f01;
   cursor: pointer;
+}
 
-}
-.recipelist .recipeimg {
-  float:left;
-  width: 40%;
-  display: inline-block;
-  margin: 3rem 2rem;
-}
+
+
+ @media only screen and (min-width: 500px) {
+  .recipelist li {
+    float: left;
+    margin-right: 2%;
+    width: 49%;
+  }
+  .recipelist li:nth-of-type(2n + 2) {
+    margin-right: 0;
+  }
+ }
+
+  @media only screen and (min-width: 992px) {
+  .recipelist li {
+    float: left;
+    margin-right: 2%;
+    width: 32%;
+  }
+  .recipelist li:nth-of-type(2n + 2) {
+    margin-right: 2%;
+  }
+  .recipelist li:nth-of-type(3n + 3) {
+    margin-right: 0;
+  }
+ }
 
 .recipeimg img{
   display: block;
@@ -47,9 +60,7 @@ background-color:   #f29f01;
 }
 
 li p {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
+  margin: 12px auto;
   width: 50%;
   text-align: center;
   font-family: 'Lato', sans-serif;

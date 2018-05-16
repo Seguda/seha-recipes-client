@@ -38,14 +38,13 @@ class Recipes extends Component {
     const recipes = this.props.recipes.map((recipe, index) => {
       let _param = `/recipes/${recipe.name.toLowerCase()}`;
       return (
-        <Link key={index} to={{pathname: _param}}>
           <li className="recipeimg" onClick={() => this.setRecipe(recipe)}>
-            <img src={`${API_BASE_URL + "/" + recipe.downloadUrl}`} />
-            <p> {recipe.name} </p>
-            <p> {recipe.type} </p>
-           
+            <Link key={index} to={{ pathname: _param }}>
+              <img src={`${API_BASE_URL + "/" + recipe.downloadUrl}`} />
+              <p> {recipe.name} </p>
+              <p> {recipe.type} </p>
+            </Link>
           </li>
-        </Link>
       )
     });
     return (
