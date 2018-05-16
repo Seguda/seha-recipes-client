@@ -43,6 +43,7 @@ class Recipes extends Component {
             <img src={`${API_BASE_URL + "/" + recipe.downloadUrl}`} />
             <p> {recipe.name} </p>
             <p> {recipe.type} </p>
+           
           </li>
         </Link>
       )
