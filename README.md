@@ -3,7 +3,7 @@
 Contains recipes of foods that users like to share with others. 
 The main goal of Share Your Yummies is to share recipes with other people who like to cook and try new recipes.
 ## Installation ##
-View back end code here: ***https://github.com/thinkful-ei19/seha-recipes-server ***
+View back end code here: (https://github.com/thinkful-ei19/seha-recipes-server)
 ## Table of Contents:##
 * Description
 * Link to Deployed Version
