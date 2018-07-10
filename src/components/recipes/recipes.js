@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {setRecipe} from '../../actions';
-import {Link} from 'react-router-dom';
-import './recipes.css'
-import { API_BASE_URL } from '../../config';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { setRecipe } from "../../actions";
+import { Link } from "react-router-dom";
+import "./recipes.css";
+import { API_BASE_URL } from "../../config";
 
 class Recipes extends Component {
   constructor(props) {
@@ -11,8 +11,8 @@ class Recipes extends Component {
     this.state = {
       showRecipe: false,
       recipe: [],
-      text: ''
-    }
+      text: ""
+    };
     this.setRecipe = this.setRecipe.bind(this);
     this.closeRecipe = this.closeRecipe.bind(this);
     this.searchRecipe = this.searchRecipe.bind(this);
@@ -34,18 +34,18 @@ class Recipes extends Component {
     });
   }
 
-  render(){
+  render() {
     const recipes = this.props.recipes.map((recipe, index) => {
       let _param = `/recipes/${recipe.name.toLowerCase()}`;
       return (
-          <li className="recipeimg" onClick={() => this.setRecipe(recipe)}>
-            <Link key={index} to={{ pathname: _param }}>
-              <img src={`${API_BASE_URL + "/" + recipe.downloadUrl}`} />
-              <p> {recipe.name} </p>
-              <p> {recipe.type} </p>
-            </Link>
-          </li>
-      )
+        <li className="recipeimg" onClick={() => this.setRecipe(recipe)}>
+          <Link key={index} to={{ pathname: _param }}>
+            <img src={`${API_BASE_URL + "/" + recipe.downloadUrl}`} />
+            <p> {recipe.name} </p>
+            <p> {recipe.type} </p>
+          </Link>
+        </li>
+      );
     });
     return (
       <div className="wrap">
@@ -56,10 +56,10 @@ class Recipes extends Component {
   }
 }
 
-const mapStateToProps = function (state) {
+const mapStateToProps = function(state) {
   return {
-      recipes: state.recipeReducer.recipes
+    recipes: state.recipeReducer.recipes
   };
-}
+};
 
 export default connect(mapStateToProps)(Recipes);

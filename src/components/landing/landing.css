@@ -1,35 +1,35 @@
 h2 {
-	color: #ef0049;
-	margin: 20px 0 12px;
+  color: #ea8f8f;
+  margin: 20px 0 12px;
 }
 
 .landing {
-	margin: 0 0 20px;
+  margin: 0 0 20px;
 }
 
-.welcome_text{
-	padding: 20px 0;
+.welcome_text {
+  padding: 20px 0;
 }
 
 .landingsteps {
-	padding-left: 22px;
+  padding-left: 22px;
 }
 
 .landingsteps li {
-	margin: 14px 0;
+  margin: 14px 0;
 }
 
 .landingsteps span {
-	font-style: italic;
+  font-style: italic;
 }
 
 .enjoy {
-	text-align: center;
+  text-align: center;
 }
 
 .enjoy p {
-	color: #4c84ad;
-	font-size: 2rem;
-	font-weight: bold;
-	margin: 30px 0;
+  color: #4c84ad;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 30px 0;
 }
