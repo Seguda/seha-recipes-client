@@ -40,7 +40,7 @@ class Recipes extends Component {
       return (
         <li className="recipeimg" onClick={() => this.setRecipe(recipe)}>
           <Link key={index} to={{ pathname: _param }}>
-            <img src={`${API_BASE_URL + "/" + recipe.downloadUrl}`} />
+            <img src={`${API_BASE_URL + "/" + recipe.downloadUrl}`} alt="" />
             <p> {recipe.name} </p>
             <p> {recipe.type} </p>
           </Link>

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { doSearch } from '../../actions';
-import './search.css'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { doSearch } from "../../actions";
+import "./search.css";
 
-function searchingFor(text,recipe){
-      // return recipe.name.toLowerCase().includes(text.toLowerCase());
-}
+// function searchingFor(text,recipe){
+//       // return recipe.name.toLowerCase().includes(text.toLowerCase());
+// }
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -16,8 +16,8 @@ class Search extends Component {
     this.state = {
       executeSearch: false,
       searchCompleted: false,
-      term: ''
-    }
+      term: ""
+    };
   }
 
   handleSubmit(e) {
@@ -29,32 +29,33 @@ class Search extends Component {
   handleChange(e) {
     e.preventDefault();
     const _term = this.textInput.value;
-    if(_term.length > 3) {
+    if (_term.length > 3) {
       this.setState((prevState, props) => {
         return {
           term: _term
-        }
+        };
       });
     }
   }
 
-    render() {
-      return (
-        <form className="searchbar" onSubmit={(e) => this.handleSubmit(e)}>
-          <input  type="search"
-                  placeholder="Recipe Search"
-                  onChange={this.handleChange}
-                  ref={input => this.textInput = input}
-          />
-          <button type="submit">Go!</button>
-        </form>
-      );
-    }
+  render() {
+    return (
+      <form className="searchbar" onSubmit={e => this.handleSubmit(e)}>
+        <input
+          type="search"
+          placeholder="Recipe Search"
+          onChange={this.handleChange}
+          ref={input => (this.textInput = input)}
+        />
+        <button type="submit">Go!</button>
+      </form>
+    );
+  }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     recipes: state.recipeReducer.recipes
-  }
+  };
 };
 
 export default connect(mapStateToProps)(Search);
